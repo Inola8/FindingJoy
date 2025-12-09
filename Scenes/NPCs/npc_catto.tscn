@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4peimlhxasc6"]
+
+[ext_resource type="Texture2D" uid="uid://8amjxdij35qq" path="res://Assets/Sprites/FJ_Characters.png" id="1_c5710"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
+atlas = ExtResource("1_c5710")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6unj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Npc_Catto" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_g6unj")
+animation = &"idle"

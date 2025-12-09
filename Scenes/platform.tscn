@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjqumanxrjvh2"]
+
+[ext_resource type="Texture2D" uid="uid://02f115e7a741" path="res://Assets/Sprites/Nature_Spritesheet.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(131.5, 28)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(48, 10, 91, 29)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-65, 0)
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(149, 10, 43, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20.25, 0)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true
