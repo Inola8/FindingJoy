@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8amjxdij35qq"
-path="res://.godot/imported/FJ_Characters.png-56fd2497ff24105c6f3c5a269bee49db.ctex"
+uid="uid://bql1v30c1dmte"
+path="res://.godot/imported/FJ_Character_Anim_Spritesheet.png-44d0b143fbb5e3e900c34cd6093d3a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/FJ_Characters.png"
-dest_files=["res://.godot/imported/FJ_Characters.png-56fd2497ff24105c6f3c5a269bee49db.ctex"]
+source_file="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png"
+dest_files=["res://.godot/imported/FJ_Character_Anim_Spritesheet.png-44d0b143fbb5e3e900c34cd6093d3a97.ctex"]
 
 [params]
 
