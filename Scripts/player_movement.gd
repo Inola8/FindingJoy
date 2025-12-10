@@ -1,23 +1,35 @@
+class_name Player
+
 extends CharacterBody2D
 
 # Reference to sprite
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D;
+
+# Interacton signal
+signal interact();
 
 # Movement variables
-const SPEED = 120.0
-const JUMP_VELOCITY = -300.0
+const SPEED = 120.0;
+const JUMP_VELOCITY = -300.0;
 
+# Update
+func _process(_delta: float) -> void:
+	# Emit signal for interaction
+	if Input.is_action_just_pressed("interact"):
+		interact.emit();
+
+# Physics & movement
 func _physics_process(delta: float) -> void:
 	# Add the gravity
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta;
 
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY;
 
 	# Get the input direction
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction := Input.get_axis("move_left", "move_right");
 	
 	# Flip sprite based on the direction
 	if direction > 0:
@@ -36,9 +48,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Apply movement
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED;
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED);
 
 	# Velocity
-	move_and_slide()
+	move_and_slide();

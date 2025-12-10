@@ -1,24 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://6diwp4771qdn"]
+[gd_scene load_steps=11 format=3 uid="uid://6diwp4771qdn"]
 
-[ext_resource type="Texture2D" uid="uid://8amjxdij35qq" path="res://Assets/Sprites/FJ_Characters.png" id="1_ixly8"]
+[ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_ixly8"]
+[ext_resource type="Script" uid="uid://bjbyaeh3hajsv" path="res://Scripts/npc_quest.gd" id="1_kkdgs"]
+[ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_6sv2h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixly8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sv2h"]
 atlas = ExtResource("1_ixly8")
-region = Rect2(96, 0, 48, 48)
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkdgs"]
+atlas = ExtResource("1_ixly8")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyp16"]
+atlas = ExtResource("1_ixly8")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_argjy"]
+atlas = ExtResource("1_ixly8")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1qvi"]
+atlas = ExtResource("1_ixly8")
+region = Rect2(0, 192, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6sv2h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ixly8")
+"texture": SubResource("AtlasTexture_6sv2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkdgs")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyp16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_argjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1qvi")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkdgs"]
+size = Vector2(136, 132)
+
 [node name="Npc_Linda" type="Node2D"]
+script = ExtResource("1_kkdgs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_6sv2h")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7239107
+
+[node name="InteractionTrigger" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger"]
+position = Vector2(-24, -66)
+shape = SubResource("RectangleShape2D_kkdgs")
+
+[node name="QuestSign" parent="." instance=ExtResource("2_6sv2h")]
+position = Vector2(-14, -53)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]
+[connection signal="body_exited" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_exited"]
