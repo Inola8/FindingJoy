@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpi4t21lg84ns"]
+[gd_scene format=3 uid="uid://bpi4t21lg84ns"]
 
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_40slj"]
+[ext_resource type="Script" uid="uid://svf7d1a3cbn5" path="res://Scripts/Quests/quest_sign.gd" id="1_rfnn5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfnn5"]
 atlas = ExtResource("1_40slj")
@@ -29,8 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="QuestSign" type="Node2D"]
+[node name="QuestSign" type="Node2D" unique_id=1403083654]
+script = ExtResource("1_rfnn5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1636320164]
 sprite_frames = SubResource("SpriteFrames_5jojd")
 autoplay = "default"

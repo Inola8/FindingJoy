@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://24lnb658cdxg"]
+
+[ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="1_p3dy4"]
+[ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="2_a7y81"]
+[ext_resource type="Script" uid="uid://d0a0qrvxtitoy" path="res://Scripts/Dialogue/dialogue_ui.gd" id="3_p4k1q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gdhk"]
+bg_color = Color(0.0142752165, 0.014275218, 0.014275218, 0.8980392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5251013, 0.52510136, 0.52510107, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3dy4"]
+bg_color = Color(0.0142752165, 0.014275218, 0.014275218, 0.8980392)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5251013, 0.52510136, 0.52510107, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p4k1q"]
+diffuse_texture = ExtResource("2_a7y81")
+
+[node name="Dialog_UI" type="Control" unique_id=1575722984]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_p4k1q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2045695025]
+
+[node name="TextPanel" type="Panel" parent="CanvasLayer" unique_id=986659958]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 87.0
+offset_top = -182.0
+offset_right = -265.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1gdhk")
+
+[node name="DialogueBox" type="VBoxContainer" parent="CanvasLayer/TextPanel" unique_id=972144458]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="DialogueText" type="Label" parent="CanvasLayer/TextPanel/DialogueBox" unique_id=1751427378]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.7666196, 0.7666196, 0.76661927, 1)
+theme_override_fonts/font = ExtResource("1_p3dy4")
+theme_override_font_sizes/font_size = 25
+text = "This is text..."
+
+[node name="DialogueOptions" type="HBoxContainer" parent="CanvasLayer/TextPanel/DialogueBox" unique_id=316469811]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ImagePanel" type="Panel" parent="CanvasLayer" unique_id=447145965]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 907.0
+offset_top = -196.0
+offset_right = -65.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3dy4")
+
+[node name="NPCName" type="Label" parent="CanvasLayer/ImagePanel" unique_id=782740032]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7666196, 0.7666196, 0.76661927, 1)
+theme_override_fonts/font = ExtResource("1_p3dy4")
+theme_override_font_sizes/font_size = 22
+text = "Name"
+horizontal_alignment = 1
+
+[node name="NPCImage" type="Sprite2D" parent="CanvasLayer/ImagePanel" unique_id=1444643461]
+position = Vector2(90, 72.25001)
+scale = Vector2(3.507, 2.8)
+texture = SubResource("CanvasTexture_p4k1q")

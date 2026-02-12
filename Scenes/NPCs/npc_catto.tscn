@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4peimlhxasc6"]
+[gd_scene format=3 uid="uid://b4peimlhxasc6"]
 
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_c5710"]
-[ext_resource type="Script" uid="uid://bjbyaeh3hajsv" path="res://Scripts/npc_quest.gd" id="1_gq5kg"]
+[ext_resource type="Script" uid="uid://bqk7ubi7uamjh" path="res://Scripts/npc.gd" id="1_gq5kg"]
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_jiaws"]
+[ext_resource type="Resource" uid="uid://bcr48jqb5miv7" path="res://Scripts/Resources/CattosQuest.tres" id="3_q06nr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiaws"]
 atlas = ExtResource("1_c5710")
@@ -62,25 +63,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiaws"]
 size = Vector2(136, 132)
 
-[node name="Npc_Catto" type="Node2D"]
+[node name="Npc_Catto" type="Node2D" unique_id=766575677 node_paths=PackedStringArray("quest_sign")]
 script = ExtResource("1_gq5kg")
+quest_sign = NodePath("QuestSign")
+npc_quest = ExtResource("3_q06nr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=797345853]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_rblh1")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.13175716
 
-[node name="InteractionTrigger" type="Area2D" parent="."]
+[node name="InteractionTrigger" type="Area2D" parent="." unique_id=2002801687]
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger" unique_id=872051566]
 position = Vector2(-24, -66)
 shape = SubResource("RectangleShape2D_jiaws")
 
-[node name="QuestSign" parent="." instance=ExtResource("2_jiaws")]
+[node name="QuestSign" parent="." unique_id=1887914335 instance=ExtResource("2_jiaws")]
 position = Vector2(-14, -53)
 scale = Vector2(0.5, 0.5)
 

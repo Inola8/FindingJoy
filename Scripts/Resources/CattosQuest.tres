@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://bcr48jqb5miv7"]
+
+[ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="1_40g17"]
+[ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="1_88pm6"]
+
+[resource]
+script = ExtResource("1_88pm6")
+id = "CattosQuest"
+npc_id = "Catto"
+npc_sprite = ExtResource("1_40g17")
+prompt_started = "I'm starving, can you get me anything to eat?"
+prompt_ongoing = "I'm soooooo hungry!"
+prompt_finished = "Just what I needed, thanks!"
+reward = true
+metadata/_custom_type_script = "uid://b6k3w7yv3576a"

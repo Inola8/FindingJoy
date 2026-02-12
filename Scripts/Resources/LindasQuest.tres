@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://d1iqm02me3l4g"]
+
+[ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="1_1hle1"]
+[ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="1_aadx0"]
+
+[resource]
+script = ExtResource("1_1hle1")
+id = "LindasQuest"
+npc_id = "Linda"
+npc_sprite = ExtResource("1_aadx0")
+prompt_started = "Do you see those rocks! There's so many of them! Let's collect them!"
+prompt_ongoing = "Did you grather enough of them? Let's toss them into the water!"
+prompt_finished = "That was fun! I wish there were more rocks!"
+reward = true
+metadata/_custom_type_script = "uid://b6k3w7yv3576a"

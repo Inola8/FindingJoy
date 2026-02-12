@@ -1,6 +1,4 @@
-class_name Player
-
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 # Reference to sprite
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D;

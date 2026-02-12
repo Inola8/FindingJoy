@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://6diwp4771qdn"]
+[gd_scene format=3 uid="uid://6diwp4771qdn"]
 
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_ixly8"]
-[ext_resource type="Script" uid="uid://bjbyaeh3hajsv" path="res://Scripts/npc_quest.gd" id="1_kkdgs"]
+[ext_resource type="Script" uid="uid://bqk7ubi7uamjh" path="res://Scripts/npc.gd" id="1_kkdgs"]
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_6sv2h"]
+[ext_resource type="Resource" uid="uid://d1iqm02me3l4g" path="res://Scripts/Resources/LindasQuest.tres" id="2_thnt8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sv2h"]
 atlas = ExtResource("1_ixly8")
@@ -55,25 +56,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkdgs"]
 size = Vector2(136, 132)
 
-[node name="Npc_Linda" type="Node2D"]
+[node name="Npc_Linda" type="Node2D" unique_id=2078462553 node_paths=PackedStringArray("quest_sign")]
 script = ExtResource("1_kkdgs")
+quest_sign = NodePath("QuestSign")
+npc_quest = ExtResource("2_thnt8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799182748]
 position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_6sv2h")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.7239107
 
-[node name="InteractionTrigger" type="Area2D" parent="."]
+[node name="InteractionTrigger" type="Area2D" parent="." unique_id=1430502440]
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTrigger" unique_id=1998393894]
 position = Vector2(-24, -66)
 shape = SubResource("RectangleShape2D_kkdgs")
 
-[node name="QuestSign" parent="." instance=ExtResource("2_6sv2h")]
+[node name="QuestSign" parent="." unique_id=1217261221 instance=ExtResource("2_6sv2h")]
 position = Vector2(-14, -53)
 scale = Vector2(0.5, 0.5)
 
