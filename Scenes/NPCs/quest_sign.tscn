@@ -2,10 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_40slj"]
 [ext_resource type="Script" uid="uid://svf7d1a3cbn5" path="res://Scripts/Quests/quest_sign.gd" id="1_rfnn5"]
+[ext_resource type="Texture2D" uid="uid://dyjpfmvqfo3nm" path="res://Assets/Sprites/FJ_Exclamation_Mark.png" id="3_vboiv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfnn5"]
 atlas = ExtResource("1_40slj")
 region = Rect2(48, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jojd"]
+atlas = ExtResource("3_vboiv")
+region = Rect2(0, 0, 47, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vboiv"]
 atlas = ExtResource("1_40slj")
@@ -23,6 +28,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5jojd")
+}],
+"loop": true,
+"name": &"finished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vboiv")
 }],
 "loop": true,
@@ -35,4 +48,5 @@ script = ExtResource("1_rfnn5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1636320164]
 sprite_frames = SubResource("SpriteFrames_5jojd")
+animation = &"interact"
 autoplay = "default"

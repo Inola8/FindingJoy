@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://pyshecxcoiva"]
+
+[ext_resource type="Texture2D" uid="uid://b7x1k21ds8y2o" path="res://Assets/Sprites/FJ_Wooden_Sign.png" id="1_iggv7"]
+[ext_resource type="Script" uid="uid://c8s3yuuv8ef70" path="res://Scripts/Quests/rock_sign.gd" id="1_mc133"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iggv7"]
+size = Vector2(83.33333, 36.333332)
+
+[node name="Area2D" type="Area2D" unique_id=1294619995]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_mc133")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1020852284]
+texture = ExtResource("1_iggv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091585377]
+position = Vector2(-1.8378098e-06, -4.833334)
+shape = SubResource("RectangleShape2D_iggv7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

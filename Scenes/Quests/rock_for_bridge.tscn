@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyee37tba8qmw"]
+
+[ext_resource type="Texture2D" uid="uid://crmietu343doq" path="res://Assets/Sprites/FJ_Rocks.png" id="1_bibl2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m5o51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnt3n"]
+size = Vector2(36, 20)
+
+[node name="Rock" type="StaticBody2D" unique_id=1039460527 groups=["rocks"]]
+scale = Vector2(0.5, 0.5)
+physics_material_override = SubResource("PhysicsMaterial_m5o51")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115251421]
+texture = ExtResource("1_bibl2")
+region_enabled = true
+region_rect = Rect2(3.5641003, 18.269289, 37.188835, 24.457525)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471646719]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fnt3n")
+one_way_collision = true

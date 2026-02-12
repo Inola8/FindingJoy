@@ -12,6 +12,11 @@ func triggered():
 func idle():
 	quest_sign.get_node("AnimatedSprite2D").play("default")
 	inRange = false
+	
+func finished():
+	quest_sign.show()
+	quest_sign.get_node("AnimatedSprite2D").play("finished")
+	inRange = true
 
 # Call function when player interacts
 func hide_sign():

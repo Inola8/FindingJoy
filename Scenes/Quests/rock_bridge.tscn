@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dfafqoefp6t7c"]
+
+[ext_resource type="PackedScene" uid="uid://cyee37tba8qmw" path="res://Scenes/Quests/rock_for_bridge.tscn" id="1_tmiw5"]
+[ext_resource type="Script" uid="uid://cnyvd1ncyxetf" path="res://Scripts/Quests/rock_bridge.gd" id="2_bjisr"]
+
+[node name="RockBridge" type="Node2D" unique_id=1572812500]
+script = ExtResource("2_bjisr")
+
+[node name="Rock2" parent="." unique_id=1039460527 instance=ExtResource("1_tmiw5")]
+position = Vector2(-1, 0)
+
+[node name="Rock3" parent="." unique_id=2013171746 instance=ExtResource("1_tmiw5")]
+position = Vector2(21, 0)
+
+[node name="Rock4" parent="." unique_id=575004514 instance=ExtResource("1_tmiw5")]
+position = Vector2(45, 0)
+
+[node name="Rock5" parent="." unique_id=2075605610 instance=ExtResource("1_tmiw5")]
+position = Vector2(68, 0)
+
+[node name="Rock6" parent="." unique_id=1570379482 instance=ExtResource("1_tmiw5")]
+position = Vector2(91, 0)
+
+[node name="Rock7" parent="." unique_id=164095135 instance=ExtResource("1_tmiw5")]
+position = Vector2(113, -1)
+
+[node name="Rock8" parent="." unique_id=569298042 instance=ExtResource("1_tmiw5")]
+position = Vector2(137, -1)
+
+[node name="Rock9" parent="." unique_id=391094924 instance=ExtResource("1_tmiw5")]
+position = Vector2(162, 0)
+
+[node name="Rock10" parent="." unique_id=171457371 instance=ExtResource("1_tmiw5")]
+position = Vector2(186, 1)
+
+[node name="Rock11" parent="." unique_id=903908636 instance=ExtResource("1_tmiw5")]
+position = Vector2(209, 0)

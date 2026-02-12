@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bsu7yj076vxjn"]
+[gd_scene format=3 uid="uid://bsu7yj076vxjn"]
 
-[ext_resource type="Script" uid="uid://c542xvw2yatnn" path="res://Scripts/player_movement.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://c542xvw2yatnn" path="res://Scripts/Player/player_movement.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://0ir3uc26ud3m" path="res://Assets/Sprites/Player/FJ_Player_Walk_Spritesheet.png" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://cqumy1o06aj7t" path="res://Assets/Sprites/Player/FJ_Player_Idle.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="3_fkybt"]

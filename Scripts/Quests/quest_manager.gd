@@ -8,7 +8,6 @@ signal hide_dialogue()
 
 # Store quests here
 var active_quests: Dictionary = {}
-var has_started_quest = false
 
 func start_quest(data: QuestData) -> void:
 
@@ -19,7 +18,6 @@ func start_quest(data: QuestData) -> void:
 
 	# Show dialogue when starting a new quest
 	show_dialogue.emit(data.npc_id, data.npc_sprite, data.prompt_started)
-	has_started_quest = true
 
 # Show some text when quest is not completed yet
 func remind_quest(data: QuestData) -> void:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dy852803fckwd"]
+
+[ext_resource type="Script" uid="uid://def7m3ya8bvfg" path="res://Scripts/Player/rock_holder.gd" id="1_cmfmt"]
+
+[node name="RockCollector" type="Node2D" unique_id=1726234330]
+script = ExtResource("1_cmfmt")

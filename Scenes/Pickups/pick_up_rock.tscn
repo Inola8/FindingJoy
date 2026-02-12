@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://djwyv1shtuhfe"]
+
+[ext_resource type="Script" uid="uid://cgrfmhonfc7hk" path="res://Scripts/Pickups/pick_up_rock.gd" id="1_6pxt2"]
+[ext_resource type="Texture2D" uid="uid://crmietu343doq" path="res://Assets/Sprites/FJ_Rocks.png" id="2_6pxt2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwlfb"]
+radius = 8.062258
+
+[node name="PickUp_Rock1" type="Area2D" unique_id=1023746572]
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
+script = ExtResource("1_6pxt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1279765551]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_6pxt2")
+region_enabled = true
+region_rect = Rect2(3.6850662, 17.754719, 36.9528, 24.853207)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520741161]
+shape = SubResource("CircleShape2D_iwlfb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
