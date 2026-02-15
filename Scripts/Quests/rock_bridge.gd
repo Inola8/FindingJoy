@@ -1,6 +1,6 @@
 extends Node
 
-@onready var npc_linda: Npc = $"../NPCs/Npc_Linda"
+@onready var npc_linda: Npc = $"../../NPCs/Npc_Linda"
 
 @onready var rocks = get_tree().get_nodes_in_group("rocks")
 var index: int = 0

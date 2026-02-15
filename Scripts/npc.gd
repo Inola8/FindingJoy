@@ -19,6 +19,7 @@ func _ready():
 func _on_interaction_trigger_body_entered(_body: Node2D) -> void:
 	if not has_finished_quest:
 		quest_sign.triggered()
+	
 	inRange = true
 	
 func _on_interaction_trigger_body_exited(_body: Node2D) -> void:

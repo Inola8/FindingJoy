@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bhhcfdg18mstg"]
 
-[ext_resource type="Script" uid="uid://bqk7ubi7uamjh" path="res://Scripts/npc.gd" id="1_58r7c"]
+[ext_resource type="Script" uid="uid://bto2ytjj0beme" path="res://Scripts/npc_happy.gd" id="1_4locr"]
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_ujrib"]
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_2dulu"]
 [ext_resource type="Resource" uid="uid://dknk12mkc2r0m" path="res://Scripts/Resources/HappysQuest.tres" id="2_ldm3j"]
+[ext_resource type="Texture2D" uid="uid://3w3chvw1rqd7" path="res://Assets/Sprites/FJ_happy_walk.png" id="4_4locr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dulu"]
 atlas = ExtResource("1_ujrib")
@@ -32,6 +33,22 @@ region = Rect2(48, 96, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_voh85"]
 atlas = ExtResource("1_ujrib")
 region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqb03"]
+atlas = ExtResource("4_4locr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1qfd"]
+atlas = ExtResource("4_4locr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcpr3"]
+atlas = ExtResource("4_4locr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0glo"]
+atlas = ExtResource("1_ujrib")
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2dulu"]
 animations = [{
@@ -65,13 +82,30 @@ animations = [{
 "loop": true,
 "name": &"talk",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqb03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1qfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcpr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0glo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58r7c"]
 size = Vector2(136, 132)
 
 [node name="Npc_Happy" type="Node2D" unique_id=1945118431 node_paths=PackedStringArray("quest_sign")]
-script = ExtResource("1_58r7c")
+script = ExtResource("1_4locr")
 quest_sign = NodePath("QuestSign")
 npc_quest = ExtResource("2_ldm3j")
 
@@ -80,8 +114,7 @@ position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_2dulu")
 animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.9383983
+frame_progress = 0.74276996
 
 [node name="InteractionTrigger" type="Area2D" parent="." unique_id=1845512232]
 scale = Vector2(0.5, 0.5)

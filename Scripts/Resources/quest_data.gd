@@ -10,8 +10,5 @@ class_name QuestData extends Resource
 @export var prompt_ongoing: String
 @export var prompt_finished: String
 
-@export_group("Objective")
-@export var required_item: Dictionary = {}
-
 @export_group("Reward")
 @export var reward: bool = false

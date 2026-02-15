@@ -2,7 +2,7 @@ extends Area2D
 
 var inRange: bool = false
 
-@onready var rock_collector: Node2D = $"../Inventory/RockCollector"
+@onready var rock_collector: Node2D = $"../../Inventory/RockCollector"
 @onready var rock_bridge: Node2D = $"../RockBridge"
 
 func _ready():
