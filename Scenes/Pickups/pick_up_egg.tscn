@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4a5qeouxfuva"]
+
+[ext_resource type="Texture2D" uid="uid://dsbynerrouii2" path="res://Assets/Sprites/Kitchen/FJ_kitchen.png" id="1_76uq4"]
+[ext_resource type="Script" uid="uid://dsm4mtrh7ypeh" path="res://Scripts/Pickups/pick_up_ingredient.gd" id="1_adgrt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwlfb"]
+radius = 12.0
+
+[node name="PickUp_Egg" type="Area2D" unique_id=1023746572]
+collision_mask = 2
+script = ExtResource("1_adgrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1920066940]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_76uq4")
+region_enabled = true
+region_rect = Rect2(102.90958, 50.752155, 33.60106, 40.842663)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520741161]
+shape = SubResource("CircleShape2D_iwlfb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

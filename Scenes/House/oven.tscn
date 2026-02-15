@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bm8xu6b255atc"]
+
+[ext_resource type="Script" uid="uid://c7ov3ksyusikb" path="res://Scripts/Quests/oven.gd" id="1_yc0wl"]
+[ext_resource type="Texture2D" uid="uid://dsbynerrouii2" path="res://Assets/Sprites/Kitchen/FJ_kitchen.png" id="2_go24w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac010"]
+atlas = ExtResource("2_go24w")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixpcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac010")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac010")
+}],
+"loop": false,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pj0w"]
+size = Vector2(40, 38)
+
+[node name="Oven" type="Node2D" unique_id=1414478336]
+script = ExtResource("1_yc0wl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=655270264]
+sprite_frames = SubResource("SpriteFrames_ixpcg")
+animation = &"on"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1599151610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1029227401]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_0pj0w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

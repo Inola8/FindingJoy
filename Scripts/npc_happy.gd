@@ -1,6 +1,6 @@
 extends Npc
 
-const SPEED: float = 80 #10
+const SPEED: float = 10 #10
 
 # Bools
 var direction: float = 1

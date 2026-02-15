@@ -12,14 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://dy852803fckwd" path="res://Scenes/Quests/rock_collector.tscn" id="6_nnt18"]
 [ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="7_1phco"]
 [ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="8_nb51f"]
+[ext_resource type="Script" uid="uid://cdegtdar0dnm7" path="res://Scripts/Player/cake_holder.gd" id="9_7nbq1"]
 [ext_resource type="PackedScene" uid="uid://24lnb658cdxg" path="res://Scenes/Dialogue/dialogue_ui.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://dkkuj341dgcy3" path="res://Scenes/quest_manager.tscn" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://djwyv1shtuhfe" path="res://Scenes/Pickups/pick_up_rock.tscn" id="13_nb51f"]
 [ext_resource type="PackedScene" uid="uid://pyshecxcoiva" path="res://Scenes/Quests/rock_sign.tscn" id="17_ewbju"]
 [ext_resource type="PackedScene" uid="uid://dfafqoefp6t7c" path="res://Scenes/Quests/rock_bridge.tscn" id="18_85qyi"]
 [ext_resource type="PackedScene" uid="uid://d0bbk4s5re5r1" path="res://Scenes/House/house.tscn" id="18_iivbl"]
+[ext_resource type="PackedScene" uid="uid://bbyrvffe1sv4h" path="res://Scenes/cattos_house.tscn" id="19_iivbl"]
+[ext_resource type="PackedScene" uid="uid://bm8xu6b255atc" path="res://Scenes/House/oven.tscn" id="21_exi56"]
+[ext_resource type="PackedScene" uid="uid://4a5qeouxfuva" path="res://Scenes/Pickups/pick_up_egg.tscn" id="22_mg4q0"]
+[ext_resource type="PackedScene" uid="uid://d2nwhrtx3cyn4" path="res://Scenes/Pickups/pick_up_flour.tscn" id="23_vm72l"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nbq1"]
 texture = ExtResource("2_wrm1d")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -39,7 +44,7 @@ texture_region_size = Vector2i(48, 48)
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 0:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5yvi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exi56"]
 texture = ExtResource("2_ldgsr")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
@@ -48,7 +53,7 @@ texture_region_size = Vector2i(48, 48)
 3:0/0 = 0
 0:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rku1e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7t8sx"]
 texture = ExtResource("3_3dryh")
 texture_region_size = Vector2i(48, 48)
 0:0/size_in_atlas = Vector2i(2, 2)
@@ -57,9 +62,9 @@ texture_region_size = Vector2i(48, 48)
 [sub_resource type="TileSet" id="TileSet_ebmjs"]
 tile_size = Vector2i(48, 48)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wowpa")
-sources/1 = SubResource("TileSetAtlasSource_o5yvi")
-sources/2 = SubResource("TileSetAtlasSource_rku1e")
+sources/0 = SubResource("TileSetAtlasSource_7nbq1")
+sources/1 = SubResource("TileSetAtlasSource_exi56")
+sources/2 = SubResource("TileSetAtlasSource_7t8sx")
 
 [sub_resource type="Resource" id="Resource_nnt18"]
 script = ExtResource("8_nb51f")
@@ -155,8 +160,11 @@ position = Vector2(2851, 0)
 [node name="CattoHouse" parent="Houses" unique_id=1872743823 instance=ExtResource("18_iivbl")]
 position = Vector2(-602, 1)
 
+[node name="WorldSpawnPoint" type="Marker2D" parent="Houses/CattoHouse" unique_id=1896918090]
+position = Vector2(30, -7.5)
+
 [node name="Player" parent="." unique_id=1776620274 groups=["player"] instance=ExtResource("1_ebmjs")]
-position = Vector2(-36, -9)
+position = Vector2(-36, -35)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2136450077]
 position = Vector2(84, -36)
@@ -166,6 +174,10 @@ position_smoothing_enabled = true
 [node name="Inventory" type="Node" parent="." unique_id=1670398219]
 
 [node name="RockCollector" parent="Inventory" unique_id=1726234330 instance=ExtResource("6_nnt18")]
+
+[node name="CakeCollector" type="Node2D" parent="Inventory" unique_id=483990190]
+position = Vector2(-1920, -39)
+script = ExtResource("9_7nbq1")
 
 [node name="NPCs" type="Node" parent="." unique_id=1943928747]
 
@@ -238,6 +250,12 @@ rock_text = ExtResource("2_ldgsr")
 position = Vector2(-188, -3)
 rock_text = ExtResource("2_ldgsr")
 
+[node name="PickUp_Egg" parent="PickUps" unique_id=624809592 instance=ExtResource("22_mg4q0")]
+position = Vector2(-1975, -44)
+
+[node name="PickUp_Flour" parent="PickUps" unique_id=1837863808 instance=ExtResource("23_vm72l")]
+position = Vector2(-1735, -43)
+
 [node name="LindasQuest" type="Node" parent="." unique_id=1845313900]
 
 [node name="RockSign" parent="LindasQuest" unique_id=1294619995 instance=ExtResource("17_ewbju")]
@@ -245,3 +263,12 @@ position = Vector2(742, -14.000001)
 
 [node name="RockBridge" parent="LindasQuest" unique_id=1037432339 instance=ExtResource("18_85qyi")]
 position = Vector2(784, 5)
+
+[node name="CattosHouse" parent="." unique_id=1029395675 instance=ExtResource("19_iivbl")]
+position = Vector2(-2231, 48)
+
+[node name="CattoSpawnPoint" type="Marker2D" parent="CattosHouse" unique_id=1758719207]
+position = Vector2(596, -81)
+
+[node name="Oven" parent="CattosHouse" unique_id=1414478336 instance=ExtResource("21_exi56")]
+position = Vector2(312, -67)

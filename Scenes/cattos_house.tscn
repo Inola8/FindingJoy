@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bbyrvffe1sv4h"]
+
+[ext_resource type="Script" uid="uid://3nu2tx6kvvbn" path="res://Scripts/Quests/cattosdoor.gd" id="1_1is0h"]
+[ext_resource type="Texture2D" uid="uid://dsbynerrouii2" path="res://Assets/Sprites/Kitchen/FJ_kitchen.png" id="1_3x0iy"]
+[ext_resource type="PackedScene" uid="uid://c3a1ru27k8axb" path="res://Scenes/House/fridge.tscn" id="2_njue0"]
+[ext_resource type="Texture2D" uid="uid://b7x1k21ds8y2o" path="res://Assets/Sprites/FJ_Wooden_Sign.png" id="3_fliob"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njue0"]
+texture = ExtResource("1_3x0iy")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, 24, 24, 24, 24, -24, -24, -24)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24, -24, -24)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, -4)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, -5)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, -4)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fliob"]
+tile_size = Vector2i(48, 48)
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_njue0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1is0h"]
+size = Vector2(50, 76)
+
+[node name="CattosHouse" type="Node2D" unique_id=1029395675]
+script = ExtResource("1_1is0h")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1483576449]
+tile_set = SubResource("TileSet_fliob")
+rendering_quadrant_size = 48
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 65539, 0, 65537, 65539, 0, 65538, 65539, 0, 65539, 65539, 0, 65540, 65539, 0, 65541, 65539, 0, 65542, 65539, 0, 65543, 65539, 0, 65544, 65539, 0, 4, 65539, 0, 5, 65539, 0, 6, 65539, 0, 7, 65539, 0, 8, 65539, 0, 196607, 65539, 0, 131072, 65539, 0, 131073, 65539, 0, 131074, 65539, 0, 131075, 65539, 0, 131076, 65539, 0, 131077, 65539, 0, 131078, 65539, 0, 131079, 65539, 0, 131080, 65539, 0, 65545, 65539, 0, 65546, 65539, 0, 65547, 65539, 0, 65548, 65539, 0, 65549, 65539, 0, 131085, 65539, 0, 131084, 65539, 0, 131083, 65539, 0, 131082, 65539, 0, 131081, 65539, 0, 9, 65539, 0, 10, 65539, 0, 11, 65539, 0, 12, 65539, 0, 13, 65539, 0, 3, 65539, 0, 14, 65539, 0, 15, 65539, 0, 65550, 65539, 0, 131086, 65539, 0, 131087, 65539, 0, 131088, 65539, 0, 131089, 65539, 0, 65551, 65539, 0, 65552, 65539, 0, 0, 65539, 0, 1, 65539, 0, 2, 65539, 0, 16, 65539, 0, 17, 65539, 0, 65553, 65539, 0, 131071, 65539, 0, 65535, 65539, 0, -589807, 65539, 0, -524271, 65539, 0, -458735, 65539, 0, -393199, 65539, 0, -327663, 65539, 0, -262127, 65539, 0, -196591, 65539, 0, -131055, 65539, 0, -65519, 65539, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 3, 0, -65523, 3, 0, -65522, 65539, 0, -65521, 65539, 0, -131063, 196611, 0, -131062, 65539, 1, -131065, 65539, 1, -131067, 65539, 1, -131056, 65539, 0, -589808, 65539, 0, -524272, 65539, 0, -458736, 65539, 0, -393200, 65539, 0, -327664, 65539, 0, -262128, 65539, 0, -196592, 65539, 0, -524289, 65539, 0, -458753, 65539, 0, -393217, 65539, 0, -327681, 65539, 0, -262145, 65539, 0, -196609, 65539, 0, -131073, 65539, 0, -65537, 65539, 0, -1, 65539, 0, -65520, 65539, 0, -589824, 65539, 0, -524288, 65539, 0, -458752, 65539, 0, -393216, 65539, 0, -327680, 65539, 0, -262144, 65539, 0, -196608, 65539, 0, -131072, 65539, 0, -589823, 65539, 0, -524287, 65539, 0, -458751, 65539, 0, -393215, 65539, 0, -327679, 65539, 0, -262143, 65539, 0, -196607, 65539, 0, -131071, 65539, 0, -131070, 3, 1342177280, -589822, 3, 1342177280, -524286, 3, 1342177280, -458750, 3, 1342177280, -393214, 3, 1342177280, -327678, 3, 1342177280, -262142, 3, 1342177280, -196606, 3, 1342177280, -589810, 3, 1610612736, -524274, 3, 1610612736, -458738, 3, 1610612736, -393202, 3, 1610612736, -327666, 3, 1610612736, -262130, 3, 1610612736, -196594, 3, 1610612736, -131058, 3, 1610612736, -589809, 65539, 0, -524273, 65539, 0, -458737, 65539, 0, -393201, 65539, 0, -327665, 65539, 0, -262129, 65539, 0, -196593, 65539, 0, -131057, 65539, 0)
+
+[node name="Fridge" parent="." unique_id=1414478336 instance=ExtResource("2_njue0")]
+position = Vector2(199, -83)
+
+[node name="Door" type="Area2D" parent="." unique_id=270981627]
+position = Vector2(596, -55)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1692071021]
+position = Vector2(-1, -30)
+shape = SubResource("RectangleShape2D_1is0h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1172818115]
+position = Vector2(0, -17)
+texture = ExtResource("3_fliob")
+
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+[connection signal="body_exited" from="Door" to="." method="_on_door_body_exited"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://55lnwpvgsj0f" path="res://Scripts/Pickups/pick_up_joy.gd" id="1_iwlfb"]
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="2_iwlfb"]
+[ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="3_wiuib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwlfb"]
 radius = 8.062258
@@ -18,5 +19,9 @@ region_rect = Rect2(149, 120, 34, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520741161]
 shape = SubResource("CircleShape2D_iwlfb")
+
+[node name="QuestSign" parent="." unique_id=1403083654 instance=ExtResource("3_wiuib")]
+position = Vector2(-23, -23)
+scale = Vector2(0.6, 0.6)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
