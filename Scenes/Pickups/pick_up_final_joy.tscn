@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b1oml1w0a8wew"]
+
+[ext_resource type="Script" uid="uid://bih4h4wy673ml" path="res://Scripts/Pickups/pick_up_final_joy.gd" id="1_ibhie"]
+[ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="2_cml0f"]
+[ext_resource type="Texture2D" uid="uid://blbnxioywsao1" path="res://Assets/Sprites/FJ_scared_joy.png" id="3_qajic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiuib"]
+atlas = ExtResource("2_cml0f")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o686f"]
+atlas = ExtResource("3_qajic")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq264"]
+atlas = ExtResource("3_qajic")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w0h0"]
+atlas = ExtResource("3_qajic")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxrc0"]
+atlas = ExtResource("3_qajic")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe2ai"]
+atlas = ExtResource("3_qajic")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8yy8"]
+atlas = ExtResource("3_qajic")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6gnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiuib")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o686f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq264")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w0h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxrc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe2ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8yy8")
+}],
+"loop": false,
+"name": &"scared",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iwlfb"]
+radius = 8.062258
+
+[node name="PickUp_FinalJoy" type="Area2D" unique_id=1023746572]
+collision_mask = 2
+script = ExtResource("1_ibhie")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=559061269]
+position = Vector2(-2, -6)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_c6gnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520741161]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_iwlfb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

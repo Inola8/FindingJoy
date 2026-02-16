@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d0bbk4s5re5r1"]
 
 [ext_resource type="Texture2D" uid="uid://cueyypm0pk0fp" path="res://Assets/Sprites/FJ_House.png" id="1_251tq"]
-[ext_resource type="Script" uid="uid://b281f4itqbpjx" path="res://Scripts/Quests/house.gd" id="1_x6o7t"]
+[ext_resource type="Script" uid="uid://dq06xc2l434l2" path="res://Scripts/Quests/happyshouse.gd" id="1_x6o7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_251tq"]
 size = Vector2(28, 35.5)
 
-[node name="House" type="Node2D" unique_id=2015106444]
+[node name="Happys_House" type="Node2D" unique_id=2015106444]
 scale = Vector2(2, 2)
 script = ExtResource("1_x6o7t")
 

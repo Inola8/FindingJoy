@@ -15,18 +15,21 @@
 [ext_resource type="Texture2D" uid="uid://4m3iu5i2tfc7" path="res://Assets/Sprites/FJ_water.png" id="7_fkdbe"]
 [ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="8_nb51f"]
 [ext_resource type="Script" uid="uid://cdegtdar0dnm7" path="res://Scripts/Player/cake_holder.gd" id="9_7nbq1"]
+[ext_resource type="PackedScene" uid="uid://b6ppfjkcxjjhg" path="res://Scenes/House/catto_outside_house.tscn" id="10_mucmn"]
 [ext_resource type="PackedScene" uid="uid://24lnb658cdxg" path="res://Scenes/Dialogue/dialogue_ui.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://dkkuj341dgcy3" path="res://Scenes/quest_manager.tscn" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://djwyv1shtuhfe" path="res://Scenes/Pickups/pick_up_rock.tscn" id="13_nb51f"]
 [ext_resource type="PackedScene" uid="uid://pyshecxcoiva" path="res://Scenes/Quests/rock_sign.tscn" id="17_ewbju"]
 [ext_resource type="PackedScene" uid="uid://duu7tesdr6d4n" path="res://Scenes/Camera/joy_camera_2d.tscn" id="17_vm72l"]
 [ext_resource type="PackedScene" uid="uid://dfafqoefp6t7c" path="res://Scenes/Quests/rock_bridge.tscn" id="18_85qyi"]
-[ext_resource type="PackedScene" uid="uid://d0bbk4s5re5r1" path="res://Scenes/House/house.tscn" id="18_iivbl"]
+[ext_resource type="PackedScene" uid="uid://d0bbk4s5re5r1" path="res://Scenes/House/happy_outside_house.tscn" id="18_iivbl"]
 [ext_resource type="PackedScene" uid="uid://bbyrvffe1sv4h" path="res://Scenes/cattos_house.tscn" id="19_iivbl"]
 [ext_resource type="PackedScene" uid="uid://bm8xu6b255atc" path="res://Scenes/House/oven.tscn" id="21_exi56"]
 [ext_resource type="PackedScene" uid="uid://4a5qeouxfuva" path="res://Scenes/Pickups/pick_up_egg.tscn" id="22_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://d2nwhrtx3cyn4" path="res://Scenes/Pickups/pick_up_flour.tscn" id="23_vm72l"]
 [ext_resource type="PackedScene" uid="uid://bckajncvsc3hd" path="res://Scenes/Outside/bridge.tscn" id="27_81klo"]
+[ext_resource type="PackedScene" uid="uid://bm5yobudsrbfr" path="res://Scenes/happys_house.tscn" id="28_tgy6u"]
+[ext_resource type="PackedScene" uid="uid://b1oml1w0a8wew" path="res://Scenes/Pickups/pick_up_final_joy.tscn" id="29_cwurv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nbq1"]
 texture = ExtResource("2_wrm1d")
@@ -171,13 +174,16 @@ position = Vector2(2575.0002, 3)
 
 [node name="Houses" type="Node" parent="." unique_id=1783633929]
 
-[node name="HappyHouse" parent="Houses" unique_id=2015106444 instance=ExtResource("18_iivbl")]
+[node name="Cattos_House" parent="Houses" unique_id=1453157174 instance=ExtResource("10_mucmn")]
+position = Vector2(-588, 0)
+
+[node name="CattoWorldSpawnPoint" type="Marker2D" parent="Houses/Cattos_House" unique_id=1896918090]
+position = Vector2(30, -7)
+
+[node name="Happys_House" parent="Houses" unique_id=2015106444 instance=ExtResource("18_iivbl")]
 position = Vector2(2851, 0)
 
-[node name="CattoHouse" parent="Houses" unique_id=1872743823 instance=ExtResource("18_iivbl")]
-position = Vector2(-602, 1)
-
-[node name="WorldSpawnPoint" type="Marker2D" parent="Houses/CattoHouse" unique_id=1896918090]
+[node name="HappyWorldSpawnPoint" type="Marker2D" parent="Houses/Happys_House" unique_id=640335613]
 position = Vector2(30, -7.5)
 
 [node name="Player" parent="." unique_id=1776620274 groups=["player"] instance=ExtResource("1_ebmjs")]
@@ -295,3 +301,12 @@ position = Vector2(596, -81)
 
 [node name="Oven" parent="CattosHouse" unique_id=1414478336 instance=ExtResource("21_exi56")]
 position = Vector2(312, -67)
+
+[node name="HappysHouse" parent="." unique_id=179931643 instance=ExtResource("28_tgy6u")]
+position = Vector2(4388, 47)
+
+[node name="HappySpawnPoint" type="Marker2D" parent="HappysHouse" unique_id=1445822809]
+position = Vector2(596, -81)
+
+[node name="PickUp_Joy" parent="HappysHouse" unique_id=1042136118 instance=ExtResource("29_cwurv")]
+position = Vector2(348, -1789)

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b6ppfjkcxjjhg"]
+
+[ext_resource type="Script" uid="uid://b281f4itqbpjx" path="res://Scripts/Quests/cattoshouse.gd" id="1_hedqw"]
+[ext_resource type="Texture2D" uid="uid://cueyypm0pk0fp" path="res://Assets/Sprites/FJ_House.png" id="2_3nhke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_251tq"]
+size = Vector2(28, 35.5)
+
+[node name="Cattos_House" type="Node2D" unique_id=2015106444]
+scale = Vector2(2, 2)
+script = ExtResource("1_hedqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2031039778]
+position = Vector2(0, -45)
+texture = ExtResource("2_3nhke")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1017881173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1247606534]
+position = Vector2(29, -18.25)
+shape = SubResource("RectangleShape2D_251tq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

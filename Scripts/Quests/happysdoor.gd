@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var catto_world_spawn_point: Marker2D = $"../Houses/Cattos_House/CattoWorldSpawnPoint"
+@onready var happy_world_spawn_point: Marker2D = $"../Houses/Happys_House/HappyWorldSpawnPoint"
 
 var player_in_range = null
 
@@ -21,4 +21,4 @@ func _on_interact():
 	if player_in_range:
 		##################### Add fade to black
 		player_in_range.velocity = Vector2.ZERO
-		player_in_range.global_position = catto_world_spawn_point.global_position
+		player_in_range.global_position = happy_world_spawn_point.global_position
