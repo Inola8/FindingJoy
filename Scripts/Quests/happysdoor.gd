@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var happy_world_spawn_point: Marker2D = $"../Houses/Happys_House/HappyWorldSpawnPoint"
+@onready var fade_black: Control = $"../BlackScreen/FadeBlack"
 
 var player_in_range = null
 
@@ -19,6 +20,7 @@ func _on_door_body_exited(body: Node2D) -> void:
 
 func _on_interact():
 	if player_in_range:
-		##################### Add fade to black
+		fade_black.transition()
+		await get_tree().create_timer(0.3).timeout
 		player_in_range.velocity = Vector2.ZERO
 		player_in_range.global_position = happy_world_spawn_point.global_position

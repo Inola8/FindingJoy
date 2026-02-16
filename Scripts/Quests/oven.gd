@@ -3,6 +3,7 @@ extends Node2D
 @onready var cake_collector: Node2D = $"../../Inventory/CakeCollector"
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var light: PointLight2D = $PointLight2D
 
 # Bools
 var inRange: bool = false
@@ -33,8 +34,10 @@ func _on_interact():
 		if not isBaking:
 			isBaking = true
 			animated_sprite.play("on")
+			light.enabled = true
 			
 			# Wait while baking
 			await get_tree().create_timer(5).timeout
 			cake_collector.spawn_cake()
 			animated_sprite.play("off")
+			light.enabled = false

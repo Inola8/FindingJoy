@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ceufyot4f3iie"]
+
+[ext_resource type="Texture2D" uid="uid://bxkci8nuot52h" path="res://Assets/Sprites/House/FJ_house_obj.png" id="1_d0tp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(125, 28)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=411705859]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873467437]
+texture = ExtResource("1_d0tp0")
+region_enabled = true
+region_rect = Rect2(48, 10, 82.88393, 29.273857)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=62158173]
+position = Vector2(-62, 0)
+texture = ExtResource("1_d0tp0")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(86.33598, 10, 43.69069, 29.121002)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1500981892]
+position = Vector2(-21.5, 0)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

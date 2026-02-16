@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://02f115e7a741" path="res://Assets/Sprites/Nature_Spritesheet.png" id="2_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://bk87al0e2mnyq" path="res://Assets/Sprites/FJ_Tree_Leaves.png" id="3_3dryh"]
 [ext_resource type="Script" uid="uid://bmgg112v14vps" path="res://Scripts/Camera/camera_controller.gd" id="3_22asu"]
+[ext_resource type="PackedScene" uid="uid://c2iuvr2mrnqge" path="res://Scenes/UI/fade_black.tscn" id="3_oeip8"]
 [ext_resource type="PackedScene" uid="uid://cjqumanxrjvh2" path="res://Scenes/platform.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b4peimlhxasc6" path="res://Scenes/NPCs/npc_catto.tscn" id="4_v158k"]
 [ext_resource type="PackedScene" uid="uid://bhhcfdg18mstg" path="res://Scenes/NPCs/npc_happy.tscn" id="5_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://b0nobcu3dfl52" path="res://Scenes/Pickups/pick_up_joy.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://6diwp4771qdn" path="res://Scenes/NPCs/npc_linda.tscn" id="6_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://dy852803fckwd" path="res://Scenes/Quests/rock_collector.tscn" id="6_nnt18"]
-[ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="7_1phco"]
 [ext_resource type="Texture2D" uid="uid://4m3iu5i2tfc7" path="res://Assets/Sprites/FJ_water.png" id="7_fkdbe"]
 [ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="8_nb51f"]
 [ext_resource type="Script" uid="uid://cdegtdar0dnm7" path="res://Scripts/Player/cake_holder.gd" id="9_7nbq1"]
@@ -19,17 +19,21 @@
 [ext_resource type="PackedScene" uid="uid://24lnb658cdxg" path="res://Scenes/Dialogue/dialogue_ui.tscn" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://dkkuj341dgcy3" path="res://Scenes/quest_manager.tscn" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://djwyv1shtuhfe" path="res://Scenes/Pickups/pick_up_rock.tscn" id="13_nb51f"]
+[ext_resource type="Texture2D" uid="uid://c6mexmrgpxf14" path="res://Assets/Sprites/FJ_catto_talk.png" id="15_8m3t6"]
 [ext_resource type="PackedScene" uid="uid://pyshecxcoiva" path="res://Scenes/Quests/rock_sign.tscn" id="17_ewbju"]
 [ext_resource type="PackedScene" uid="uid://duu7tesdr6d4n" path="res://Scenes/Camera/joy_camera_2d.tscn" id="17_vm72l"]
 [ext_resource type="PackedScene" uid="uid://dfafqoefp6t7c" path="res://Scenes/Quests/rock_bridge.tscn" id="18_85qyi"]
+[ext_resource type="Texture2D" uid="uid://d2q6d8ltjppfn" path="res://Assets/Sprites/FJ_happy_talk.png" id="18_ese38"]
 [ext_resource type="PackedScene" uid="uid://d0bbk4s5re5r1" path="res://Scenes/House/happy_outside_house.tscn" id="18_iivbl"]
 [ext_resource type="PackedScene" uid="uid://bbyrvffe1sv4h" path="res://Scenes/cattos_house.tscn" id="19_iivbl"]
+[ext_resource type="Texture2D" uid="uid://chnn4wqtjaqk8" path="res://Assets/Sprites/FJ_linda_talk.png" id="20_ese38"]
 [ext_resource type="PackedScene" uid="uid://bm8xu6b255atc" path="res://Scenes/House/oven.tscn" id="21_exi56"]
 [ext_resource type="PackedScene" uid="uid://4a5qeouxfuva" path="res://Scenes/Pickups/pick_up_egg.tscn" id="22_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://d2nwhrtx3cyn4" path="res://Scenes/Pickups/pick_up_flour.tscn" id="23_vm72l"]
 [ext_resource type="PackedScene" uid="uid://bckajncvsc3hd" path="res://Scenes/Outside/bridge.tscn" id="27_81klo"]
 [ext_resource type="PackedScene" uid="uid://bm5yobudsrbfr" path="res://Scenes/happys_house.tscn" id="28_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://b1oml1w0a8wew" path="res://Scenes/Pickups/pick_up_final_joy.tscn" id="29_cwurv"]
+[ext_resource type="PackedScene" uid="uid://b6eqe3ejxqcrd" path="res://Scenes/Particles/rain_particle.tscn" id="34_xe308"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nbq1"]
 texture = ExtResource("2_wrm1d")
@@ -84,7 +88,7 @@ sources/4 = SubResource("TileSetAtlasSource_81klo")
 script = ExtResource("8_nb51f")
 id = "CattosQuest"
 npc_id = "Catto"
-npc_sprite = ExtResource("7_1phco")
+npc_sprite = ExtResource("15_8m3t6")
 prompt_started = "I'm starving, can you get me anything to eat?"
 prompt_ongoing = "I'm soooooo hungry!"
 prompt_finished = "Just what I needed, thanks!"
@@ -95,7 +99,7 @@ metadata/_custom_type_script = "uid://b6k3w7yv3576a"
 script = ExtResource("8_nb51f")
 id = "HappysQuest"
 npc_id = "Happy"
-npc_sprite = ExtResource("7_1phco")
+npc_sprite = ExtResource("18_ese38")
 prompt_started = "The bugs keep bothering me, would you please walk me home?"
 prompt_ongoing = "A little further please."
 prompt_finished = "Thank you dear."
@@ -106,7 +110,7 @@ metadata/_custom_type_script = "uid://b6k3w7yv3576a"
 script = ExtResource("8_nb51f")
 id = "LindasQuest"
 npc_id = "Linda"
-npc_sprite = ExtResource("7_1phco")
+npc_sprite = ExtResource("20_ese38")
 prompt_started = "Do you see those rocks! There's so many of them! Let's collect them!"
 prompt_ongoing = "Did you grather enough of them? Let's toss them into the water!"
 prompt_finished = "That was fun! I wish there were more rocks!"
@@ -158,6 +162,10 @@ DialogueUi = NodePath("../Dialogue_UI")
 
 [node name="Dialogue_UI" parent="." unique_id=1575722984 instance=ExtResource("11_o5yvi")]
 
+[node name="BlackScreen" type="Node" parent="." unique_id=1923330688]
+
+[node name="FadeBlack" parent="BlackScreen" unique_id=1924458165 instance=ExtResource("3_oeip8")]
+
 [node name="CameraController" type="Node" parent="." unique_id=381752608]
 script = ExtResource("3_22asu")
 
@@ -187,7 +195,7 @@ position = Vector2(2851, 0)
 position = Vector2(30, -7.5)
 
 [node name="Player" parent="." unique_id=1776620274 groups=["player"] instance=ExtResource("1_ebmjs")]
-position = Vector2(-36, -35)
+position = Vector2(-25, -41)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2136450077]
 position = Vector2(0, -50)
@@ -220,7 +228,7 @@ npc_quest = SubResource("Resource_nb51f")
 [node name="Platforms" type="Node" parent="." unique_id=264233392]
 
 [node name="Platform" parent="Platforms" unique_id=497533361 instance=ExtResource("4_3dryh")]
-position = Vector2(-766, -53)
+position = Vector2(-766, -34)
 
 [node name="PlatformMoving" parent="Platforms" unique_id=917416377 instance=ExtResource("4_3dryh")]
 position = Vector2(101, -122)
@@ -309,4 +317,13 @@ position = Vector2(4388, 47)
 position = Vector2(596, -81)
 
 [node name="PickUp_Joy" parent="HappysHouse" unique_id=1042136118 instance=ExtResource("29_cwurv")]
-position = Vector2(348, -1789)
+position = Vector2(382, -1790)
+
+[node name="VFX" type="Node" parent="." unique_id=2045165269]
+
+[node name="Rain" parent="VFX" unique_id=367223221 instance=ExtResource("34_xe308")]
+z_index = -2
+position = Vector2(79, -199)
+
+[node name="Rain2" parent="VFX" unique_id=701002698 instance=ExtResource("34_xe308")]
+position = Vector2(2023, -199)

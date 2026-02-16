@@ -29,6 +29,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pj0w"]
 size = Vector2(40, 38)
 
+[sub_resource type="Gradient" id="Gradient_yc0wl"]
+offsets = PackedFloat32Array(0.5018868, 0.7056604)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_go24w"]
+gradient = SubResource("Gradient_yc0wl")
+fill = 1
+fill_from = Vector2(0.508547, 0.48290598)
+fill_to = Vector2(0.77350426, 0.31196582)
+
 [node name="Oven" type="Node2D" unique_id=1414478336]
 script = ExtResource("1_yc0wl")
 
@@ -37,10 +47,19 @@ sprite_frames = SubResource("SpriteFrames_ixpcg")
 animation = &"on"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1599151610]
+position = Vector2(0, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1029227401]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_0pj0w")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2086129891]
+position = Vector2(-2, 5)
+enabled = false
+color = Color(0.7416683, 0.31528175, 0.03176957, 1)
+energy = 2.54
+texture = SubResource("GradientTexture2D_go24w")
+texture_scale = 1.2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
