@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://duu7tesdr6d4n"]
+
+[node name="JoyCamera2D" type="Camera2D" unique_id=1757390955]
+enabled = false
+zoom = Vector2(3, 3)

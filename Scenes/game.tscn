@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crmietu343doq" path="res://Assets/Sprites/FJ_Rocks.png" id="2_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://02f115e7a741" path="res://Assets/Sprites/Nature_Spritesheet.png" id="2_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://bk87al0e2mnyq" path="res://Assets/Sprites/FJ_Tree_Leaves.png" id="3_3dryh"]
+[ext_resource type="Script" uid="uid://bmgg112v14vps" path="res://Scripts/Camera/camera_controller.gd" id="3_22asu"]
 [ext_resource type="PackedScene" uid="uid://cjqumanxrjvh2" path="res://Scenes/platform.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://b4peimlhxasc6" path="res://Scenes/NPCs/npc_catto.tscn" id="4_v158k"]
 [ext_resource type="PackedScene" uid="uid://bhhcfdg18mstg" path="res://Scenes/NPCs/npc_happy.tscn" id="5_h4fw4"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkuj341dgcy3" path="res://Scenes/quest_manager.tscn" id="12_rku1e"]
 [ext_resource type="PackedScene" uid="uid://djwyv1shtuhfe" path="res://Scenes/Pickups/pick_up_rock.tscn" id="13_nb51f"]
 [ext_resource type="PackedScene" uid="uid://pyshecxcoiva" path="res://Scenes/Quests/rock_sign.tscn" id="17_ewbju"]
+[ext_resource type="PackedScene" uid="uid://duu7tesdr6d4n" path="res://Scenes/Camera/joy_camera_2d.tscn" id="17_vm72l"]
 [ext_resource type="PackedScene" uid="uid://dfafqoefp6t7c" path="res://Scenes/Quests/rock_bridge.tscn" id="18_85qyi"]
 [ext_resource type="PackedScene" uid="uid://d0bbk4s5re5r1" path="res://Scenes/House/house.tscn" id="18_iivbl"]
 [ext_resource type="PackedScene" uid="uid://bbyrvffe1sv4h" path="res://Scenes/cattos_house.tscn" id="19_iivbl"]
@@ -144,6 +146,9 @@ DialogueUi = NodePath("../Dialogue_UI")
 
 [node name="Dialogue_UI" parent="." unique_id=1575722984 instance=ExtResource("11_o5yvi")]
 
+[node name="CameraController" type="Node" parent="." unique_id=381752608]
+script = ExtResource("3_22asu")
+
 [node name="TileMaps" type="Node" parent="." unique_id=1588544440]
 
 [node name="TileMap" type="TileMap" parent="TileMaps" unique_id=615574584]
@@ -209,6 +214,9 @@ autoplay = &"Move"
 
 [node name="PickUp_Joy" parent="PickUps" unique_id=1411630266 instance=ExtResource("5_wowpa")]
 position = Vector2(193, -115)
+
+[node name="JoyCamera2D" parent="PickUps/PickUp_Joy" unique_id=1757390955 instance=ExtResource("17_vm72l")]
+position_smoothing_enabled = true
 
 [node name="PickUp_Rock" parent="PickUps" unique_id=1023746572 instance=ExtResource("13_nb51f")]
 position = Vector2(634, -3)

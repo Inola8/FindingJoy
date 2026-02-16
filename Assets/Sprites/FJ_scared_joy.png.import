@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crih7rigogkhx"
-path="res://.godot/imported/FJ_joy_anim.png-edacfdeaeb96d0ce920405ea9221a295.ctex"
+uid="uid://blbnxioywsao1"
+path="res://.godot/imported/FJ_scared_joy.png-1b5fd07f215e89729bf7ece7448e394b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/FJ_joy_anim.png"
-dest_files=["res://.godot/imported/FJ_joy_anim.png-edacfdeaeb96d0ce920405ea9221a295.ctex"]
+source_file="res://Assets/Sprites/FJ_scared_joy.png"
+dest_files=["res://.godot/imported/FJ_scared_joy.png-1b5fd07f215e89729bf7ece7448e394b.ctex"]
 
 [params]
 
