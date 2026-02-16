@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2agwwx56ybsi"]
 
 [ext_resource type="Script" uid="uid://c0myxoxhp1y2x" path="res://Scripts/Pickups/pick_up_cake.gd" id="1_c7hpf"]
-[ext_resource type="Texture2D" uid="uid://crmietu343doq" path="res://Assets/Sprites/FJ_Rocks.png" id="2_c7hpf"]
+[ext_resource type="Texture2D" uid="uid://bxkci8nuot52h" path="res://Assets/Sprites/House/FJ_house_obj.png" id="2_c7hpf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iwlfb"]
 radius = 12.0
@@ -14,7 +14,7 @@ script = ExtResource("1_c7hpf")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_c7hpf")
 region_enabled = true
-region_rect = Rect2(98.564606, 5.2748547, 39.97368, 32.73207)
+region_rect = Rect2(341.20508, 7.847125, 37.468018, 26.90326)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520741161]
 shape = SubResource("CircleShape2D_iwlfb")

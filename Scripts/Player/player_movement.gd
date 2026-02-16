@@ -2,6 +2,10 @@ class_name Player extends CharacterBody2D
 
 # Reference to sprite
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D;
+@onready var cam: Camera2D = $Camera2D
+
+var look_ahead_distance := 90.0
+var target_offset_x := 0.0
 
 # Interacton signal
 signal interact();
@@ -32,8 +36,13 @@ func _physics_process(delta: float) -> void:
 	# Flip sprite based on the direction
 	if direction > 0:
 		animated_sprite.flip_h = false;
+		target_offset_x  = look_ahead_distance
 	elif direction < 0:
 		animated_sprite.flip_h = true;
+		target_offset_x  = -look_ahead_distance
+	
+	# Move camera in direction
+	cam.offset.x = lerp(cam.offset.x, target_offset_x, 2 * delta)
 	
 	# Play animations
 	if is_on_floor():
