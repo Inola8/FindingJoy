@@ -48,11 +48,11 @@ func _on_interact():
 	sfx_talk.play()
 
 func show_dialogue():
-	if has_finished_quest:
-		QuestManager.complete_quest(npc_quest)
-
 	if not has_started_quest:
 		QuestManager.start_quest(npc_quest)
 		has_started_quest = true
 	else:
 		QuestManager.remind_quest(npc_quest)
+	
+	if has_finished_quest:
+		QuestManager.show_complete_quest(npc_quest)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://d1iqm02me3l4g"]
 
 [ext_resource type="Script" uid="uid://b6k3w7yv3576a" path="res://Scripts/Resources/quest_data.gd" id="1_1hle1"]
-[ext_resource type="Texture2D" uid="uid://u5yhk7eultqb" path="res://Assets/Sprites/Player/Jump.png" id="1_aadx0"]
+[ext_resource type="Texture2D" uid="uid://chnn4wqtjaqk8" path="res://Assets/Sprites/FJ_linda_talk.png" id="1_aadx0"]
 
 [resource]
 script = ExtResource("1_1hle1")

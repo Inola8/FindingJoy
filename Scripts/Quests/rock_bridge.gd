@@ -1,6 +1,7 @@
 extends Node
 
 @onready var npc_linda: Npc = $"../../NPCs/Npc_Linda"
+
 @onready var sfx: AudioStreamPlayer2D = $sfx
 
 @onready var rocks = get_tree().get_nodes_in_group("rocks")

@@ -24,6 +24,11 @@ func remind_quest(data: QuestData) -> void:
 	show_dialogue.emit(data.npc_id, data.npc_sprite, data.prompt_ongoing)
 
 func complete_quest(data: QuestData) -> void:
-	# Set the quest to completed and show the correct text
+	# Set the quest to completed
 	active_quests[data.id].state = Quest.State.completed
+	print(active_quests[data.id])
+	print(active_quests[data.id].state)
+
+func show_complete_quest(data: QuestData) -> void:
+	# Show the correct text
 	show_dialogue.emit(data.npc_id, data.npc_sprite, data.prompt_finished)
