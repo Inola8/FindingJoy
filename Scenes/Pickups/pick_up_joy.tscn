@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://blbnxioywsao1" path="res://Assets/Sprites/FJ_scared_joy.png" id="3_c6gnk"]
 [ext_resource type="Texture2D" uid="uid://dyjpfmvqfo3nm" path="res://Assets/Sprites/FJ_Exclamation_Mark.png" id="5_iq264"]
 [ext_resource type="AudioStream" uid="uid://ddd4my786ple3" path="res://Assets/Audio/FJ_joy_scared.mp3" id="5_o686f"]
+[ext_resource type="AudioStream" uid="uid://bdh06b5uc6s2v" path="res://Assets/Audio/FJ_call_meow.mp3" id="6_iq264"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiuib"]
 atlas = ExtResource("2_iwlfb")
@@ -84,12 +85,16 @@ sprite_frames = SubResource("SpriteFrames_c6gnk")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_iwlfb")
 
-[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=415698377]
-stream = ExtResource("5_o686f")
-
 [node name="exclamation_mark" type="Sprite2D" parent="." unique_id=347522869]
 position = Vector2(-22, -13)
 scale = Vector2(0.46, 0.46)
 texture = ExtResource("5_iq264")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=415698377]
+stream = ExtResource("5_o686f")
+
+[node name="sfx_call" type="AudioStreamPlayer2D" parent="." unique_id=736444858]
+stream = ExtResource("6_iq264")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

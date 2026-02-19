@@ -1,14 +1,18 @@
 extends Pickup
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var sfx: AudioStreamPlayer2D = $sfx
 @onready var exclamation_mark: Sprite2D = $exclamation_mark
+
+# Audio
+@onready var sfx: AudioStreamPlayer2D = $sfx
+@onready var sfx_call: AudioStreamPlayer2D = $sfx_call
 
 @onready var camera_controller: Node = $"../../CameraController"
 
 func _ready():
 	super._ready()
 	animated_sprite.flip_h = true
+	sfx_call.play()
 
 func _on_body_entered(_body: Node2D) -> void:
 	super._on_body_entered(_body)
