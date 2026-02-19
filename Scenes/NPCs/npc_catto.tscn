@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bqk7ubi7uamjh" path="res://Scripts/npc.gd" id="1_gq5kg"]
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_jiaws"]
 [ext_resource type="Resource" uid="uid://bcr48jqb5miv7" path="res://Scripts/Resources/CattosQuest.tres" id="3_q06nr"]
+[ext_resource type="AudioStream" uid="uid://1y4iabg4iwj" path="res://Assets/Audio/FJ_talking.mp3" id="5_e1ft8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jiaws"]
 atlas = ExtResource("1_c5710")
@@ -86,6 +87,11 @@ shape = SubResource("RectangleShape2D_jiaws")
 [node name="QuestSign" parent="." unique_id=1887914335 instance=ExtResource("2_jiaws")]
 position = Vector2(-14, -53)
 scale = Vector2(0.5, 0.5)
+
+[node name="sfx_talk" type="AudioStreamPlayer2D" parent="." unique_id=1313816885]
+stream = ExtResource("5_e1ft8")
+volume_db = -4.0
+pitch_scale = 0.9
 
 [connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]
 [connection signal="body_exited" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_exited"]

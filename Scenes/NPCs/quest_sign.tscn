@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bql1v30c1dmte" path="res://Assets/Sprites/FJ_Character_Anim_Spritesheet.png" id="1_40slj"]
 [ext_resource type="Script" uid="uid://svf7d1a3cbn5" path="res://Scripts/Quests/quest_sign.gd" id="1_rfnn5"]
 [ext_resource type="Texture2D" uid="uid://dyjpfmvqfo3nm" path="res://Assets/Sprites/FJ_Exclamation_Mark.png" id="3_vboiv"]
+[ext_resource type="AudioStream" uid="uid://du6oo2jikg3ve" path="res://Assets/Audio/FJ_text_box.wav" id="4_5jojd"]
+[ext_resource type="AudioStream" uid="uid://c3erht8cac6m0" path="res://Assets/Audio/FJ_finished_quest.wav" id="5_8rc46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfnn5"]
 atlas = ExtResource("1_40slj")
@@ -50,3 +52,13 @@ script = ExtResource("1_rfnn5")
 sprite_frames = SubResource("SpriteFrames_5jojd")
 animation = &"interact"
 autoplay = "default"
+
+[node name="sfx_alert" type="AudioStreamPlayer2D" parent="." unique_id=1916732531]
+stream = ExtResource("4_5jojd")
+volume_db = 8.0
+pitch_scale = 0.8
+
+[node name="sfx_completed" type="AudioStreamPlayer2D" parent="." unique_id=1535050203]
+stream = ExtResource("5_8rc46")
+volume_db = 1.0
+pitch_scale = 1.1

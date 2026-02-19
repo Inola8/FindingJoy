@@ -35,6 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://bm5yobudsrbfr" path="res://Scenes/happys_house.tscn" id="28_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://b1oml1w0a8wew" path="res://Scenes/Pickups/pick_up_final_joy.tscn" id="29_cwurv"]
 [ext_resource type="PackedScene" uid="uid://b6eqe3ejxqcrd" path="res://Scenes/Particles/rain_particle.tscn" id="34_xe308"]
+[ext_resource type="PackedScene" uid="uid://8xrwrn0qqshy" path="res://Scenes/bg_rain.tscn" id="36_i26dy"]
+[ext_resource type="PackedScene" uid="uid://tc0svwnpy7v1" path="res://Scenes/Outside/water_collider.tscn" id="37_lmoi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nbq1"]
 texture = ExtResource("2_wrm1d")
@@ -183,6 +185,9 @@ layer_0/tile_data = PackedInt32Array(131070, 196608, 2, 131071, 196608, 2, 65536
 [node name="Bridge" parent="." unique_id=1392607440 instance=ExtResource("27_81klo")]
 position = Vector2(2575.0002, 3)
 
+[node name="water_collider" parent="." unique_id=908747425 instance=ExtResource("37_lmoi6")]
+position = Vector2(780, 22)
+
 [node name="Houses" type="Node" parent="." unique_id=1783633929]
 
 [node name="Cattos_House" parent="Houses" unique_id=1453157174 instance=ExtResource("10_mucmn")]
@@ -330,3 +335,8 @@ position = Vector2(79, -199)
 
 [node name="Rain2" parent="VFX" unique_id=701002698 instance=ExtResource("34_xe308")]
 position = Vector2(2023, -199)
+
+[node name="Audio" type="Node" parent="." unique_id=57447587]
+
+[node name="BgRain" parent="Audio" unique_id=1100451880 instance=ExtResource("36_i26dy")]
+playback_type = 1

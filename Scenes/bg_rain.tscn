@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://8xrwrn0qqshy"]
+
+[ext_resource type="AudioStream" uid="uid://b3506122fq2am" path="res://Assets/Audio/FJ_rain_bg.wav" id="1_ms00e"]
+
+[node name="BgRain" type="AudioStreamPlayer2D" unique_id=1100451880]
+stream = ExtResource("1_ms00e")
+volume_db = -2.0
+pitch_scale = 0.6
+autoplay = true

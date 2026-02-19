@@ -1,5 +1,7 @@
 class_name Npc extends Node2D
 
+@onready var sfx_talk: AudioStreamPlayer2D = $sfx_talk
+
 # Reference to question mark
 @export var quest_sign: Node2D
 
@@ -19,6 +21,9 @@ func _ready():
 func _on_interaction_trigger_body_entered(_body: Node2D) -> void:
 	if not has_finished_quest:
 		quest_sign.triggered()
+	
+	if not has_started_quest:
+		quest_sign.play_alert_sfx()
 	
 	inRange = true
 	
@@ -40,6 +45,7 @@ func _on_interact():
 	
 	quest_sign.hide_sign()
 	show_dialogue()
+	sfx_talk.play()
 
 func show_dialogue():
 	if has_finished_quest:

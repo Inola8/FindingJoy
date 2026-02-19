@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bqk7ubi7uamjh" path="res://Scripts/npc.gd" id="1_kkdgs"]
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_6sv2h"]
 [ext_resource type="Resource" uid="uid://d1iqm02me3l4g" path="res://Scripts/Resources/LindasQuest.tres" id="2_thnt8"]
+[ext_resource type="AudioStream" uid="uid://1y4iabg4iwj" path="res://Assets/Audio/FJ_talking.mp3" id="5_lyp16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sv2h"]
 atlas = ExtResource("1_ixly8")
@@ -79,6 +80,11 @@ shape = SubResource("RectangleShape2D_kkdgs")
 [node name="QuestSign" parent="." unique_id=1217261221 instance=ExtResource("2_6sv2h")]
 position = Vector2(-14, -53)
 scale = Vector2(0.5, 0.5)
+
+[node name="sfx_talk" type="AudioStreamPlayer2D" parent="." unique_id=1327745357]
+stream = ExtResource("5_lyp16")
+volume_db = -4.0
+pitch_scale = 0.9
 
 [connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]
 [connection signal="body_exited" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_exited"]

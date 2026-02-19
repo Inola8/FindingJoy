@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0spddap47jq"]
+
+[ext_resource type="AudioStream" uid="uid://2nc3wk5hfldr" path="res://Assets/Audio/FJ_pickup.wav" id="1_dr56r"]
+[ext_resource type="Script" uid="uid://bxh2xewmhdiwt" path="res://Scripts/Pickups/sfx_pickup.gd" id="2_utxap"]
+
+[node name="sfx_pick_up" type="AudioStreamPlayer2D" unique_id=1408264947]
+stream = ExtResource("1_dr56r")
+volume_db = 11.0
+pitch_scale = 0.85
+script = ExtResource("2_utxap")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -3,9 +3,14 @@ class_name Player extends CharacterBody2D
 # Reference to sprite
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D;
 @onready var cam: Camera2D = $Camera2D
+# Reference to audio
+@onready var sfx_jump: AudioStreamPlayer2D = $sfx_jump
+@onready var sfx_walk: AudioStreamPlayer2D = $sfx_walk
 
 var look_ahead_distance := 90.0
 var target_offset_x := 0.0
+
+var isJumping: bool = false
 
 # Interacton signal
 signal interact();
@@ -29,6 +34,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY;
+		isJumping = true
+		sfx_jump.play()
+	else:
+		isJumping = false
 
 	# Get the input direction
 	var direction := Input.get_axis("move_left", "move_right");
@@ -58,6 +67,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED;
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED);
+		
+		if not isJumping:
+			sfx_walk.play()
 
 	# Velocity
 	move_and_slide();
