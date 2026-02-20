@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bpi4t21lg84ns" path="res://Scenes/NPCs/quest_sign.tscn" id="2_2dulu"]
 [ext_resource type="Resource" uid="uid://dknk12mkc2r0m" path="res://Scripts/Resources/HappysQuest.tres" id="2_ldm3j"]
 [ext_resource type="Texture2D" uid="uid://3w3chvw1rqd7" path="res://Assets/Sprites/FJ_happy_walk.png" id="4_4locr"]
-[ext_resource type="AudioStream" uid="uid://1y4iabg4iwj" path="res://Assets/Audio/FJ_talking.mp3" id="6_gjmh0"]
+[ext_resource type="AudioStream" uid="uid://bvrwpq8dx5fdu" path="res://Assets/Audio/FJ_talking.mp3" id="6_gjmh0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dulu"]
 atlas = ExtResource("1_ujrib")
@@ -105,6 +105,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58r7c"]
 size = Vector2(136, 132)
 
+[sub_resource type="Gradient" id="Gradient_gjmh0"]
+offsets = PackedFloat32Array(0.033962265, 0.49056605)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kxkjp"]
+gradient = SubResource("Gradient_gjmh0")
+width = 48
+height = 57
+fill = 1
+fill_from = Vector2(0.48290598, 0.47863248)
+
 [node name="Npc_Happy" type="Node2D" unique_id=1945118431 node_paths=PackedStringArray("quest_sign")]
 script = ExtResource("1_4locr")
 quest_sign = NodePath("QuestSign")
@@ -133,6 +144,13 @@ scale = Vector2(0.5, 0.5)
 stream = ExtResource("6_gjmh0")
 volume_db = -4.0
 pitch_scale = 0.9
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1900645966]
+position = Vector2(0, -17)
+color = Color(0.26293266, 0.26293242, 0.26293242, 1)
+energy = 0.8
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_kxkjp")
 
 [connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]
 [connection signal="body_exited" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_exited"]
