@@ -165,7 +165,7 @@ stream = ExtResource("6_x3wgy")
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1722613473]
 position = Vector2(0, -17)
 color = Color(0.26293266, 0.26293242, 0.26293242, 1)
-energy = 0.8
+energy = 0.3
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_3smsa")
 
