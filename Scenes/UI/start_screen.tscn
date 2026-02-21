@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://b0q58wwjo17og"]
+
+[ext_resource type="Script" uid="uid://cggm81fdyj5cd" path="res://Scripts/UI/start_screen.gd" id="1_0p1pj"]
+[ext_resource type="Texture2D" uid="uid://o2hyede5pb4i" path="res://Assets/Sprites/UI/FJ_title.png" id="1_3l4er"]
+[ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="2_px0ht"]
+[ext_resource type="Texture2D" uid="uid://ccdnu62t4bl5q" path="res://Assets/Sprites/UI/FJ_ui.png" id="3_px0ht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p1pj"]
+atlas = ExtResource("3_px0ht")
+region = Rect2(0, 0, 48, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhrx5"]
+atlas = ExtResource("3_px0ht")
+region = Rect2(0, 21, 48, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhrx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p1pj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhrx5")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}]
+
+[node name="StartScreen" type="Control" unique_id=1163401351]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0p1pj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=422145371]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1199292023]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1283209601]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 52
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1180602177]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleVbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1910425276]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/TitleVbox" unique_id=2088652122]
+position = Vector2(549, 147)
+scale = Vector2(10.979166, 8.395833)
+texture = ExtResource("1_3l4er")
+
+[node name="ButtonsVbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1896831828]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 25
+
+[node name="StartButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox" unique_id=168122447]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+theme_override_colors/font_color = Color(0.7288213, 0.7288222, 0.7288216, 1)
+theme_override_fonts/font = ExtResource("2_px0ht")
+theme_override_font_sizes/font_size = 38
+text = "Play
+"
+flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" unique_id=942847734]
+show_behind_parent = true
+position = Vector2(40.000008, 24.999994)
+scale = Vector2(2.9222229, 3.4999995)
+sprite_frames = SubResource("SpriteFrames_vhrx5")
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox" unique_id=1512064221]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
+theme_override_fonts/font = ExtResource("2_px0ht")
+theme_override_font_sizes/font_size = 38
+text = "Leave"
+flat = true
+icon_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" unique_id=1782611052]
+show_behind_parent = true
+position = Vector2(52.000008, 26.999994)
+scale = Vector2(2.9222229, 3.4999995)
+sprite_frames = SubResource("SpriteFrames_vhrx5")
+
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_pressed"]

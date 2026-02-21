@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dar1k0uc4qynd"]
+
+[ext_resource type="Script" uid="uid://drb66tqu6it7h" path="res://Scripts/Outside/call_collider.gd" id="1_4524u"]
+[ext_resource type="AudioStream" uid="uid://bdh06b5uc6s2v" path="res://Assets/Audio/FJ_call_meow.mp3" id="2_vxldl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxldl"]
+size = Vector2(37, 422)
+
+[node name="CallCollider" type="Area2D" unique_id=1983221676]
+script = ExtResource("1_4524u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=551226838]
+position = Vector2(-8.5, -201)
+shape = SubResource("RectangleShape2D_vxldl")
+
+[node name="sfx_call" type="AudioStreamPlayer2D" parent="." unique_id=1546650577]
+stream = ExtResource("2_vxldl")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

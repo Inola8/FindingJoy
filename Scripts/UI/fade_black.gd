@@ -9,3 +9,6 @@ func transition():
 
 func end_screen():
 	anim.play("fade_to_black")
+
+func fade_from_black():
+	anim.play("fade_from_black")
