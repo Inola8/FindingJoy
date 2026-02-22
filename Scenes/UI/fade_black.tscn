@@ -19,6 +19,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_dymqw"]
 resource_name = "fade_from_black"
+length = 1.5333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,7 +27,7 @@ tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.5333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -55,6 +56,7 @@ _data = {
 }
 
 [node name="FadeBlack" type="Control" unique_id=1924458165]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,6 +66,7 @@ grow_vertical = 2
 script = ExtResource("1_63uq7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575050173]
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2136872578]
 anchors_preset = 15

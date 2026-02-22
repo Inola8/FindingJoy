@@ -1,17 +1,16 @@
-[gd_scene format=3 uid="uid://b0q58wwjo17og"]
+[gd_scene format=3 uid="uid://doylrxh4bvq52"]
 
-[ext_resource type="Script" uid="uid://cggm81fdyj5cd" path="res://Scripts/UI/start_screen.gd" id="1_0p1pj"]
-[ext_resource type="Texture2D" uid="uid://o2hyede5pb4i" path="res://Assets/Sprites/UI/FJ_title.png" id="1_3l4er"]
-[ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="2_px0ht"]
-[ext_resource type="Texture2D" uid="uid://ccdnu62t4bl5q" path="res://Assets/Sprites/UI/FJ_ui.png" id="3_px0ht"]
-[ext_resource type="AudioStream" uid="uid://cn7kiej2kkosg" path="res://Assets/Audio/Music/FJ_start_screen_audio.mp3" id="5_vhrx5"]
+[ext_resource type="Script" uid="uid://cbinbicus12a8" path="res://Scripts/UI/end_screen.gd" id="1_a3nv1"]
+[ext_resource type="Texture2D" uid="uid://o2hyede5pb4i" path="res://Assets/Sprites/UI/FJ_title.png" id="2_jsc3u"]
+[ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="3_rao6n"]
+[ext_resource type="Texture2D" uid="uid://ccdnu62t4bl5q" path="res://Assets/Sprites/UI/FJ_ui.png" id="4_ootpa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0p1pj"]
-atlas = ExtResource("3_px0ht")
+atlas = ExtResource("4_ootpa")
 region = Rect2(0, 0, 48, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vhrx5"]
-atlas = ExtResource("3_px0ht")
+atlas = ExtResource("4_ootpa")
 region = Rect2(0, 21, 48, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhrx5"]
@@ -33,14 +32,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="StartScreen" type="Control" unique_id=1163401351]
+[node name="EndScreen" type="Control" unique_id=1163401351]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0p1pj")
+script = ExtResource("1_a3nv1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=422145371]
 
@@ -74,7 +73,7 @@ size_flags_vertical = 3
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/TitleVbox" unique_id=2088652122]
 position = Vector2(549, 147)
 scale = Vector2(10.979166, 8.395833)
-texture = ExtResource("1_3l4er")
+texture = ExtResource("2_jsc3u")
 
 [node name="ButtonsVbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1896831828]
 unique_name_in_owner = true
@@ -91,16 +90,16 @@ focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../QuitButton")
 theme_override_colors/font_color = Color(0.7288213, 0.7288222, 0.7288216, 1)
-theme_override_fonts/font = ExtResource("2_px0ht")
+theme_override_fonts/font = ExtResource("3_rao6n")
 theme_override_font_sizes/font_size = 38
-text = "Play
+text = "Home
 "
 flat = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" unique_id=942847734]
 show_behind_parent = true
-position = Vector2(40.000008, 24.999994)
-scale = Vector2(2.9222229, 3.4999995)
+position = Vector2(45.693367, 24.749994)
+scale = Vector2(3.362223, 3.4999995)
 sprite_frames = SubResource("SpriteFrames_vhrx5")
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox" unique_id=1512064221]
@@ -112,27 +111,17 @@ focus_neighbor_bottom = NodePath("../StartButton")
 focus_next = NodePath("../StartButton")
 focus_previous = NodePath("../StartButton")
 theme_override_colors/font_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
-theme_override_fonts/font = ExtResource("2_px0ht")
+theme_override_fonts/font = ExtResource("3_rao6n")
 theme_override_font_sizes/font_size = 38
-text = "Leave"
+text = "Quit"
 flat = true
 icon_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" unique_id=1782611052]
 show_behind_parent = true
-position = Vector2(52.000008, 26.999994)
-scale = Vector2(2.9222229, 3.4999995)
+position = Vector2(35.82673, 24.499994)
+scale = Vector2(3.322223, 3.4999995)
 sprite_frames = SubResource("SpriteFrames_vhrx5")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1858856214]
-stream = ExtResource("5_vhrx5")
-volume_db = 3.5
-pitch_scale = 0.9
-autoplay = true
-
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_pressed"]

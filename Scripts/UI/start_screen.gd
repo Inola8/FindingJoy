@@ -1,7 +1,5 @@
 extends Control
 
-@onready var canvas_layer: CanvasLayer = $CanvasLayer
-
 # Anim
 @onready var animated_sprite_start: AnimatedSprite2D = $CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/StartButton/AnimatedSprite2D
 @onready var animated_sprite_quit: AnimatedSprite2D = $CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton/AnimatedSprite2D

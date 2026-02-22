@@ -1,36 +1,14 @@
 [gd_scene format=3 uid="uid://bdd0xnaaqj5a8"]
 
-[ext_resource type="Script" uid="uid://ceo67ls56ul2r" path="res://Scripts/UI/credit_screen.gd" id="1_2b5e5"]
+[ext_resource type="Script" uid="uid://b844nbxcpvijm" path="res://Scripts/UI/credit_text_controller.gd" id="2_gemva"]
 [ext_resource type="Texture2D" uid="uid://o2hyede5pb4i" path="res://Assets/Sprites/UI/FJ_title.png" id="2_ifpi7"]
+[ext_resource type="Texture2D" uid="uid://d2q6d8ltjppfn" path="res://Assets/Sprites/FJ_happy_talk.png" id="3_1sv50"]
 [ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="3_utbgu"]
-[ext_resource type="Texture2D" uid="uid://ccdnu62t4bl5q" path="res://Assets/Sprites/UI/FJ_ui.png" id="4_1sv50"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0p1pj"]
-atlas = ExtResource("4_1sv50")
-region = Rect2(0, 0, 48, 21)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vhrx5"]
-atlas = ExtResource("4_1sv50")
-region = Rect2(0, 21, 48, 21)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vhrx5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0p1pj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vhrx5")
-}],
-"loop": true,
-"name": &"hover",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://chnn4wqtjaqk8" path="res://Assets/Sprites/FJ_linda_talk.png" id="5_1sv50"]
+[ext_resource type="AudioStream" uid="uid://cn7kiej2kkosg" path="res://Assets/Audio/Music/FJ_start_screen_audio.mp3" id="5_ifpi7"]
+[ext_resource type="Texture2D" uid="uid://c6mexmrgpxf14" path="res://Assets/Sprites/FJ_catto_talk.png" id="6_fvlig"]
+[ext_resource type="Texture2D" uid="uid://blbnxioywsao1" path="res://Assets/Sprites/FJ_scared_joy.png" id="7_05nlr"]
+[ext_resource type="PackedScene" uid="uid://c2iuvr2mrnqge" path="res://Scenes/UI/fade_black.tscn" id="11_324v1"]
 
 [node name="CreditScreen" type="Control" unique_id=1163401351]
 layout_mode = 3
@@ -39,9 +17,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2b5e5")
+
+[node name="FadeBlack" parent="." unique_id=1924458165 instance=ExtResource("11_324v1")]
+layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=422145371]
+script = ExtResource("2_gemva")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1199292023]
 anchors_preset = 15
@@ -51,35 +32,26 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1283209601]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 52
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 80
+[node name="MovingHolder" type="Node2D" parent="CanvasLayer" unique_id=1685721381]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1180602177]
-layout_mode = 2
-alignment = 1
+[node name="TitleVbox" type="VBoxContainer" parent="CanvasLayer/MovingHolder" unique_id=1910425276]
+offset_left = 32.0
+offset_top = 179.0
+offset_right = 1120.0
+offset_bottom = 179.0
 
-[node name="TitleVbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1910425276]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/TitleVbox" unique_id=2088652122]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MovingHolder/TitleVbox" unique_id=2088652122]
 position = Vector2(549, 147)
 scale = Vector2(10.979166, 8.395833)
 texture = ExtResource("2_ifpi7")
 
-[node name="NamesVBox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=82347788]
-layout_mode = 2
+[node name="NamesVBox" type="VBoxContainer" parent="CanvasLayer/MovingHolder" unique_id=82347788]
+offset_left = 32.0
+offset_top = 648.0
+offset_right = 1120.0
+offset_bottom = 1253.0
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/NamesVBox" unique_id=517462685]
+[node name="Label" type="Label" parent="CanvasLayer/MovingHolder/NamesVBox" unique_id=517462685]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.851769, 0.8517689, 0.85176885, 1)
 theme_override_fonts/font = ExtResource("3_utbgu")
@@ -106,57 +78,102 @@ Our cats!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsVbox" type="VBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1896831828]
-visible = false
-layout_mode = 2
-size_flags_vertical = 10
-theme_override_constants/separation = 25
+[node name="ShowCatsHolder" type="Node2D" parent="CanvasLayer" unique_id=969962803]
 
-[node name="MainButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox" unique_id=168122447]
+[node name="HappyVbox" type="VBoxContainer" parent="CanvasLayer/ShowCatsHolder" unique_id=2046976876 groups=["credit_cats"]]
+offset_left = 32.0
+offset_top = 493.0
+offset_right = 1120.0
+offset_bottom = 541.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/HappyVbox" unique_id=454744602]
+position = Vector2(549, -190)
+scale = Vector2(10.979166, 8.395833)
+texture = ExtResource("3_1sv50")
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/HappyVbox" unique_id=333147706]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
-focus_next = NodePath("../QuitButton")
-focus_previous = NodePath("../QuitButton")
-theme_override_colors/font_color = Color(0.7288213, 0.7288222, 0.7288216, 1)
 theme_override_fonts/font = ExtResource("3_utbgu")
-theme_override_font_sizes/font_size = 38
-text = "Play
-"
-flat = true
+theme_override_font_sizes/font_size = 42
+text = "Happy"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/MainButton" unique_id=942847734]
-show_behind_parent = true
-position = Vector2(40.000008, 24.999994)
-scale = Vector2(2.9222229, 3.4999995)
-sprite_frames = SubResource("SpriteFrames_vhrx5")
+[node name="LindaVbox" type="VBoxContainer" parent="CanvasLayer/ShowCatsHolder" unique_id=1606378703 groups=["credit_cats"]]
+offset_left = 32.0
+offset_top = 493.0
+offset_right = 1120.0
+offset_bottom = 541.0
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox" unique_id=1512064221]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/LindaVbox" unique_id=1964089681]
+position = Vector2(549, -190)
+scale = Vector2(10.979166, 8.395833)
+texture = ExtResource("5_1sv50")
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/LindaVbox" unique_id=760242869]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_top = NodePath("../MainButton")
-focus_neighbor_bottom = NodePath("../MainButton")
-focus_next = NodePath("../MainButton")
-focus_previous = NodePath("../MainButton")
-theme_override_colors/font_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
 theme_override_fonts/font = ExtResource("3_utbgu")
-theme_override_font_sizes/font_size = 38
-text = "Leave"
-flat = true
-icon_alignment = 1
+theme_override_font_sizes/font_size = 42
+text = "Linda"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" unique_id=1782611052]
-show_behind_parent = true
-position = Vector2(52.000008, 26.999994)
-scale = Vector2(2.9222229, 3.4999995)
-sprite_frames = SubResource("SpriteFrames_vhrx5")
+[node name="CattoVbox" type="VBoxContainer" parent="CanvasLayer/ShowCatsHolder" unique_id=1365111717 groups=["credit_cats"]]
+offset_left = 32.0
+offset_top = 493.0
+offset_right = 1120.0
+offset_bottom = 541.0
 
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/MainButton" to="." method="_on_main_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/MainButton" to="." method="_on_main_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/MainButton" to="." method="_on_main_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ButtonsVbox/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/CattoVbox" unique_id=572088134]
+position = Vector2(549, -190)
+scale = Vector2(10.979166, 8.395833)
+texture = ExtResource("6_fvlig")
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/CattoVbox" unique_id=1253198178]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_utbgu")
+theme_override_font_sizes/font_size = 42
+text = "Catto"
+horizontal_alignment = 1
+
+[node name="JoyVbox" type="VBoxContainer" parent="CanvasLayer/ShowCatsHolder" unique_id=1801418617 groups=["credit_cats"]]
+offset_left = 32.0
+offset_top = 493.0
+offset_right = 1120.0
+offset_bottom = 541.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/JoyVbox" unique_id=1793425013]
+position = Vector2(549, -190)
+scale = Vector2(10.979166, 8.395833)
+texture = ExtResource("7_05nlr")
+region_enabled = true
+region_rect = Rect2(0, 20.65073, 45.108734, 27.34927)
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/JoyVbox" unique_id=1578190101]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_utbgu")
+theme_override_font_sizes/font_size = 42
+text = "Joy"
+horizontal_alignment = 1
+
+[node name="EndText" type="VBoxContainer" parent="CanvasLayer/ShowCatsHolder" unique_id=740529108 groups=["credit_cats"]]
+offset_left = 32.0
+offset_top = 307.0
+offset_right = 1120.0
+offset_bottom = 355.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/EndText" unique_id=1896761024]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_utbgu")
+theme_override_font_sizes/font_size = 42
+text = "Thank you for playing!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ShowCatsHolder" unique_id=814152804]
+wait_time = 5.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1611636883]
+stream = ExtResource("5_ifpi7")
+volume_db = 3.5
+pitch_scale = 0.9
+autoplay = true
+
+[connection signal="timeout" from="CanvasLayer/ShowCatsHolder/Timer" to="CanvasLayer" method="_on_timer_timeout"]

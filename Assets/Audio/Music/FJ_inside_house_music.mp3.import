@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/FJ_inside_house_music.mp3-fa0ca535c90d68d522b
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
