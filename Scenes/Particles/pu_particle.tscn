@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cq55qd5x6dg4u"]
+
+[ext_resource type="Script" uid="uid://cax6hkvpp4oqb" path="res://Scripts/Pickups/pu_particle.gd" id="1_wdfrj"]
+
+[sub_resource type="Gradient" id="Gradient_pw8ny"]
+offsets = PackedFloat32Array(0.42352942, 1)
+colors = PackedColorArray(0.25565886, 0.25565878, 0.2556587, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wdfrj"]
+gradient = SubResource("Gradient_pw8ny")
+
+[sub_resource type="Curve" id="Curve_pw8ny"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.09608541, 0.9904691), -1.127643, -1.127643, 0, 0, Vector2(0.99644125, 0), -0.82404745, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wdfrj"]
+curve = SubResource("Curve_pw8ny")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f1oh2"]
+particle_flag_disable_z = true
+spread = 110.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 150, 0)
+damping_min = 39.185
+damping_max = 81.505005
+damping_curve = SubResource("CurveTexture_wdfrj")
+scale_max = 2.5
+color = Color(0.15127608, 0.15127608, 0.15127605, 1)
+color_ramp = SubResource("GradientTexture1D_wdfrj")
+turbulence_noise_strength = 0.0
+
+[node name="PUParticle" type="GPUParticles2D" unique_id=129114685]
+scale = Vector2(1.5, 1.5)
+emitting = false
+amount = 4
+lifetime = 0.24000000000000002
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_f1oh2")
+script = ExtResource("1_wdfrj")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

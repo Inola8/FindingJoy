@@ -1,5 +1,7 @@
 extends Node
 
+@onready var pickup_particle = preload("res://Scenes/Particles/pu_particle.tscn")
+
 @onready var npc_linda: Npc = $"../../NPCs/Npc_Linda"
 
 @onready var sfx: AudioStreamPlayer2D = $sfx
@@ -20,6 +22,7 @@ func set_rock_enabled(rock: StaticBody2D, enabled: bool):
 func create_bridge():
 	if index < rocks.size():
 		set_rock_enabled(rocks[index], true)
+		play_vfx()
 		
 		index += 1
 		sfx.play()
@@ -29,3 +32,10 @@ func finished_quest():
 	# Switch to completed state at some point
 	if index > 8:
 		npc_linda.finished_quest()
+
+# VFX
+func play_vfx():
+	var vfx_instance = pickup_particle.instantiate()
+	vfx_instance.global_position = rocks[index].global_position
+	get_tree().current_scene.add_child(vfx_instance)
+	vfx_instance.restart()
