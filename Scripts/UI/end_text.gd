@@ -7,5 +7,5 @@ func _ready() -> void:
 
 func show_text():
 	canvas_layer.visible = true
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(5).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/credits_screen.tscn")

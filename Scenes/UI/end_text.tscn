@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_druo2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=724996614]
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=757171899]
 anchors_preset = 15
