@@ -315,7 +315,7 @@ npc_id = "Happy"
 npc_sprite = ExtResource("18_ese38")
 prompt_started = "The bugs keep bothering me, would you please walk me home?"
 prompt_ongoing = "A little further please."
-prompt_finished = "Thank you dear."
+prompt_finished = "Thank you dear. Why don't you warm up in my house?"
 reward = true
 metadata/_custom_type_script = "uid://b6k3w7yv3576a"
 

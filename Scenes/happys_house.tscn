@@ -378,6 +378,9 @@ autoplay = &"move_up_down"
 [node name="Platform7" parent="." unique_id=1558338974 instance=ExtResource("6_57v4r")]
 position = Vector2(443, -1127)
 
+[node name="Platform9" parent="." unique_id=872942294 instance=ExtResource("6_57v4r")]
+position = Vector2(384, -1469)
+
 [node name="Platform8" parent="." unique_id=1758364088 instance=ExtResource("6_57v4r")]
 position = Vector2(541, -1174)
 
