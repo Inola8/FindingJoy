@@ -1,13 +1,11 @@
 extends Npc
 
-const SPEED: float = 10 #10
+const SPEED: float = 15 #15
 
 # Bools
 var direction: float = 1
 var canWalk: bool = false
 var joyIsClose: bool = false
-
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Happy will start walking to her house
 func _process(_delta) -> void:

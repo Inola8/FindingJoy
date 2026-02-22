@@ -1,5 +1,6 @@
 class_name Npc extends Node2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sfx_talk: AudioStreamPlayer2D = $sfx_talk
 
 # Reference to question mark
@@ -33,6 +34,7 @@ func _on_interaction_trigger_body_exited(_body: Node2D) -> void:
 		
 	inRange = false
 	QuestManager.hide_dialogue.emit()
+	animated_sprite.play("idle")
 
 func finished_quest():
 	has_finished_quest = true
@@ -46,6 +48,7 @@ func _on_interact():
 	quest_sign.hide_sign()
 	show_dialogue()
 	sfx_talk.play()
+	animated_sprite.play("talk")
 
 func show_dialogue():
 	if not has_started_quest:
