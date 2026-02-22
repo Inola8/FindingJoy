@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b844nbxcpvijm" path="res://Scripts/UI/credit_text_controller.gd" id="2_gemva"]
 [ext_resource type="Texture2D" uid="uid://o2hyede5pb4i" path="res://Assets/Sprites/UI/FJ_title.png" id="2_ifpi7"]
-[ext_resource type="Texture2D" uid="uid://d2q6d8ltjppfn" path="res://Assets/Sprites/FJ_happy_talk.png" id="3_1sv50"]
 [ext_resource type="FontFile" uid="uid://trl0yduromcg" path="res://Assets/Font/pixel_font/Tiny5-Regular.ttf" id="3_utbgu"]
-[ext_resource type="Texture2D" uid="uid://chnn4wqtjaqk8" path="res://Assets/Sprites/FJ_linda_talk.png" id="5_1sv50"]
+[ext_resource type="Texture2D" uid="uid://b4jdb7g4nmp1" path="res://Assets/Sprites/Credit/FJ_credit_happy.png" id="5_05nlr"]
 [ext_resource type="AudioStream" uid="uid://cn7kiej2kkosg" path="res://Assets/Audio/Music/FJ_start_screen_audio.mp3" id="5_ifpi7"]
-[ext_resource type="Texture2D" uid="uid://c6mexmrgpxf14" path="res://Assets/Sprites/FJ_catto_talk.png" id="6_fvlig"]
-[ext_resource type="Texture2D" uid="uid://blbnxioywsao1" path="res://Assets/Sprites/FJ_scared_joy.png" id="7_05nlr"]
+[ext_resource type="Texture2D" uid="uid://d1qt5oagdk61x" path="res://Assets/Sprites/Credit/FJ_credit_linda.png" id="6_05nlr"]
+[ext_resource type="Texture2D" uid="uid://be3tre764y5vi" path="res://Assets/Sprites/Credit/FJ_credit_catto.png" id="7_gemva"]
+[ext_resource type="Texture2D" uid="uid://boboko4qf2hvv" path="res://Assets/Sprites/Credit/FJ_credit_joy.png" id="8_05nlr"]
 [ext_resource type="PackedScene" uid="uid://c2iuvr2mrnqge" path="res://Scenes/UI/fade_black.tscn" id="11_324v1"]
 
 [node name="CreditScreen" type="Control" unique_id=1163401351]
@@ -88,8 +88,8 @@ offset_bottom = 541.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/HappyVbox" unique_id=454744602]
 position = Vector2(549, -190)
-scale = Vector2(10.979166, 8.395833)
-texture = ExtResource("3_1sv50")
+scale = Vector2(3, 3)
+texture = ExtResource("5_05nlr")
 
 [node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/HappyVbox" unique_id=333147706]
 layout_mode = 2
@@ -106,8 +106,8 @@ offset_bottom = 541.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/LindaVbox" unique_id=1964089681]
 position = Vector2(549, -190)
-scale = Vector2(10.979166, 8.395833)
-texture = ExtResource("5_1sv50")
+scale = Vector2(3, 3)
+texture = ExtResource("6_05nlr")
 
 [node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/LindaVbox" unique_id=760242869]
 layout_mode = 2
@@ -124,8 +124,8 @@ offset_bottom = 541.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/CattoVbox" unique_id=572088134]
 position = Vector2(549, -190)
-scale = Vector2(10.979166, 8.395833)
-texture = ExtResource("6_fvlig")
+scale = Vector2(3, 3)
+texture = ExtResource("7_gemva")
 
 [node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/CattoVbox" unique_id=1253198178]
 layout_mode = 2
@@ -142,9 +142,8 @@ offset_bottom = 541.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ShowCatsHolder/JoyVbox" unique_id=1793425013]
 position = Vector2(549, -190)
-scale = Vector2(10.979166, 8.395833)
-texture = ExtResource("7_05nlr")
-region_enabled = true
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("8_05nlr")
 region_rect = Rect2(0, 20.65073, 45.108734, 27.34927)
 
 [node name="Label" type="Label" parent="CanvasLayer/ShowCatsHolder/JoyVbox" unique_id=1578190101]
