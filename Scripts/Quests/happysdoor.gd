@@ -1,7 +1,10 @@
 extends Node2D
 
+signal play_audio()
+
 @onready var happy_world_spawn_point: Marker2D = $"../Houses/Happys_House/HappyWorldSpawnPoint"
 @onready var fade_black: Control = $"../BlackScreen/FadeBlack"
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var player_in_range = null
 
@@ -20,7 +23,11 @@ func _on_door_body_exited(body: Node2D) -> void:
 
 func _on_interact():
 	if player_in_range:
+		audio_stream_player.stop()
 		fade_black.transition()
 		await get_tree().create_timer(0.3).timeout
 		player_in_range.velocity = Vector2.ZERO
 		player_in_range.global_position = happy_world_spawn_point.global_position
+
+func _on_play_audio() -> void:
+	audio_stream_player.play()

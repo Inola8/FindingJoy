@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var cattos_house: Node2D = $"../../CattosHouse"
 @onready var catto_spawn_point: Marker2D = $"../../CattosHouse/CattoSpawnPoint"
 @onready var fade_black: Control = $"../../BlackScreen/FadeBlack"
 
@@ -17,6 +18,7 @@ func _on_interact():
 		await get_tree().create_timer(0.3).timeout
 		player_in_range.velocity = Vector2.ZERO
 		player_in_range.global_position = catto_spawn_point.global_position
+		cattos_house.play_audio.emit()
 
 # For detecting player
 func _on_area_2d_body_entered(body: Node2D) -> void:

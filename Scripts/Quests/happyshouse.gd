@@ -1,12 +1,13 @@
 extends Node2D
 
+@onready var happys_house: Node2D = $"../../HappysHouse"
 @onready var npc_happy: Node2D = $"../../NPCs/Npc_Happy"
 @onready var happy_spawn_point: Marker2D = $"../../HappysHouse/HappySpawnPoint"
 @onready var fade_black: Control = $"../../BlackScreen/FadeBlack"
 
 var player_in_range = null
 
-var may_enter: bool = false
+var may_enter: bool = true
 
 func _ready():
 	# Reference to player
@@ -27,6 +28,7 @@ func _on_interact():
 		await get_tree().create_timer(0.3).timeout
 		player_in_range.velocity = Vector2.ZERO
 		player_in_range.global_position = happy_spawn_point.global_position
+		happys_house.play_audio.emit()
 
 # For detecting player
 func _on_area_2d_body_entered(body: Node2D) -> void:
