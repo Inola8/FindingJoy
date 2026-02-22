@@ -7,7 +7,7 @@ extends Node2D
 
 var player_in_range = null
 
-var may_enter: bool = true
+var may_enter: bool = false
 
 func _ready():
 	# Reference to player
